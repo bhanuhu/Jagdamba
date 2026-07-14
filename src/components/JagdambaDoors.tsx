@@ -15,7 +15,7 @@ const DOORS = [
     features: ['Waterproof Surface', 'Scratch Resistant', 'No Swelling or Warping'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Walnut Brown', 'Dark Espresso', 'Natural Oak'],
-    description: 'A rich walnut-finish PVC membrane door vacuum-pressed over high-density MDF. Moisture and scratch resistant — perfect for bedrooms and humid-prone rooms.',
+    description: 'PVC membrane doors are vacuum-pressed over a high-density MDF core, delivering a seamless, moisture-resistant surface with zero swelling or warping. Available in wood-grain, solid, and designer finishes — built to last in any room.',
     priceTag: 'Premium'
   },
   {
@@ -29,7 +29,7 @@ const DOORS = [
     features: ['100% Waterproof', 'Easy to Clean', 'High-Gloss Finish'],
     sizes: ['7×3 ft', '7×3.5 ft', 'Custom'],
     colors: ['Pure White', 'Off-White', 'Pearl Grey'],
-    description: 'Sleek glossy membrane door on HDF core. The high-gloss surface is non-porous, moisture-proof, and effortlessly wipes clean — ideal for kitchens and bathrooms.',
+    description: 'PVC membrane doors are vacuum-pressed over a high-density MDF core, delivering a seamless, moisture-resistant surface with zero swelling or warping. Available in wood-grain, solid, and designer finishes — built to last in any room.',
     priceTag: 'Standard'
   },
   // ── MICA ──────────────────────────────────────────
@@ -44,7 +44,7 @@ const DOORS = [
     features: ['Heat Resistant', 'Durable Surface', 'Premium Texture'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', '8×3.5 ft', 'Custom'],
     colors: ['Teak Wood', 'Rosewood', 'Wenge', 'Light Maple'],
-    description: 'High-pressure mica laminate bonded over a solid flush core. Delivers rich wood-look texture with superior heat and impact resistance — a practical classic.',
+    description: 'Mica laminate doors bond high-pressure decorative sheets over a solid engineered core, giving you a rich wood-look finish that is heat resistant, scratch proof, and easy to maintain. A timeless and cost-effective choice for any space.',
     priceTag: 'Standard'
   },
   {
@@ -58,7 +58,7 @@ const DOORS = [
     features: ['Uniform Matte Surface', 'Scratch Resistant', 'Cost Effective'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft'],
     colors: ['Midnight Black', 'Charcoal Grey', 'Stone Beige'],
-    description: 'Contemporary matte mica door on engineered wood core. Clean, architectural lines with a durable surface — a versatile choice for modern homes and offices.',
+    description: 'Mica laminate doors bond high-pressure decorative sheets over a solid engineered core, giving you a rich wood-look finish that is heat resistant, scratch proof, and easy to maintain. A timeless and cost-effective choice for any space.',
     priceTag: 'Standard'
   },
   // ── WPC ───────────────────────────────────────────
@@ -73,7 +73,7 @@ const DOORS = [
     features: ['100% Waterproof', 'Termite Proof', 'No Rot or Rust'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Natural Teak', 'Walnut', 'Ivory White', 'Grey'],
-    description: 'Engineered from wood-plastic composite — completely waterproof, termite-proof, and rot-proof. The ideal door for bathrooms, wet areas, and outdoor-facing rooms.',
+    description: 'WPC (Wood-Plastic Composite) doors are engineered to be 100% waterproof, termite-proof, and rot-proof — making them the best choice for bathrooms, balconies, and high-moisture areas. Zero maintenance, long life.',
     priceTag: 'Premium'
   },
   {
@@ -87,7 +87,7 @@ const DOORS = [
     features: ['Zero Maintenance', 'UV Resistant', 'Fire Retardant Grade'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Dark Walnut', 'Sand Beige', 'Charcoal'],
-    description: 'Premium WPC door with a tactile wood-grain texture and fire-retardant core. Built for high-moisture and heavy-use areas where quality cannot be compromised.',
+    description: 'WPC (Wood-Plastic Composite) doors are engineered to be 100% waterproof, termite-proof, and rot-proof — making them the best choice for bathrooms, balconies, and high-moisture areas. Zero maintenance, long life.',
     priceTag: 'Premium'
   },
 ];
