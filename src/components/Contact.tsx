@@ -253,8 +253,10 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-amber-200 mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-1">General Inquiries</div>
-                    <div className="text-sm font-light text-white/80">
-                      +91 94126 78698 / +91 97600 30333
+                    <div className="text-sm font-light text-white/80 flex flex-wrap gap-2">
+                      <a href="tel:+919412678698" className="hover:text-amber-200 transition-colors">+91 94126 78698</a>
+                      <span>/</span>
+                      <a href="tel:+919760030333" className="hover:text-amber-200 transition-colors">+91 97600 30333</a>
                     </div>
                   </div>
                 </div>
