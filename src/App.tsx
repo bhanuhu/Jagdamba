@@ -10,6 +10,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 // Homepage Components
 import Hero from './components/Hero';
+import Entrance from './components/Entrance';
 import Brands from './components/Brands';
 import LivingRoom from './components/LivingRoom';
 import Kitchen from './components/Kitchen';
@@ -54,6 +55,7 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <Entrance />
       <Brands />
       <LivingRoom />
       <Kitchen />
