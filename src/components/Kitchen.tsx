@@ -20,9 +20,9 @@ export default function Kitchen() {
       slogan: 'Legendary strength and high moisture resistance.',
       color: '#8a5a2b',
       image: '/images/modular-kitchen-island.jpg',
-      density: '880 kg/m³',
-      thickness: '18mm, 25mm',
-      warranty: 'Lifetime Warranty',
+      density: '850 kg/m³',
+      thickness: '6mm, 8mm, 12mm, 18mm',
+      warranty: '10 Years',
     },
     {
       id: 'tesa',
@@ -31,8 +31,8 @@ export default function Kitchen() {
       color: '#c9a06b',
       image: '/images/kitchen-cozy-layout.jpg',
       density: '850 kg/m³',
-      thickness: '12mm, 18mm',
-      warranty: '15 Years',
+      thickness: '6mm, 8mm, 12mm, 18mm',
+      warranty: '10 Years',
     },
     {
       id: 'saptam',
@@ -41,7 +41,7 @@ export default function Kitchen() {
       color: '#6b4520',
       image: '/images/kitchen-dark-laminate.jpg',
       density: '820 kg/m³',
-      thickness: '18mm',
+      thickness: '6mm, 8mm, 12mm, 18mm',
       warranty: '10 Years',
     },
     {
@@ -51,8 +51,8 @@ export default function Kitchen() {
       color: '#a37b45',
       image: '/images/kitchen-showcase-glass.jpg',
       density: '780 kg/m³',
-      thickness: '18mm, 22mm',
-      warranty: '12 Years',
+      thickness: '18mm',
+      warranty: '10 Years',
     },
   ];
 
@@ -61,7 +61,7 @@ export default function Kitchen() {
   return (
     <section id="kitchen" className="relative min-h-screen bg-neutral-950 py-32 flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="text-[10px] tracking-[0.4em] text-amber-200/70 uppercase mb-6 font-medium">
@@ -77,7 +77,7 @@ export default function Kitchen() {
 
         {/* Brand Selector Grid */}
         <div className="grid lg:grid-cols-5 gap-12 items-center w-full mt-8">
-          
+
           {/* Left Column: Interactive Image Panel */}
           <div className="lg:col-span-3 relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/5 shadow-2xl bg-neutral-900 group">
             {brands.map((b) => (
@@ -85,13 +85,12 @@ export default function Kitchen() {
                 key={b.id}
                 src={b.image}
                 alt={b.name}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  activeBrand.id === b.id ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                }`}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${activeBrand.id === b.id ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                  }`}
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
-            
+
             {/* Live brand badge */}
             <div className="absolute bottom-6 left-6 pin-badge rounded-full px-5 py-2 text-xs tracking-widest uppercase text-white flex items-center gap-3">
               <span>{activeBrand.name}</span>
@@ -112,11 +111,10 @@ export default function Kitchen() {
                   <button
                     key={b.id}
                     onClick={() => setActiveBrand(b)}
-                    className={`w-full text-left flex items-center justify-between p-4 rounded-xl border transition-all cursor-pointer ${
-                      isActive
-                        ? 'border-amber-200/50 bg-amber-200/5 shadow-[0_4px_20px_rgba(255,200,120,0.05)]'
-                        : 'border-white/10 hover:border-white/20 bg-transparent'
-                    }`}
+                    className={`w-full text-left flex items-center justify-between p-4 rounded-xl border transition-all cursor-pointer ${isActive
+                      ? 'border-amber-200/50 bg-amber-200/5 shadow-[0_4px_20px_rgba(255,200,120,0.05)]'
+                      : 'border-white/10 hover:border-white/20 bg-transparent'
+                      }`}
                   >
                     <div>
                       <div className="font-serif-display text-2xl text-white font-light">{b.name}</div>
@@ -140,7 +138,7 @@ export default function Kitchen() {
               <div className="text-[10px] tracking-[0.4em] text-amber-200/70 uppercase mb-4 font-semibold">
                 Technical details
               </div>
-              
+
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="p-3 rounded-lg border border-white/5 bg-white/2">
                   <div className="text-[9px] tracking-[0.1em] uppercase text-white/40 mb-1">Density</div>
@@ -159,7 +157,7 @@ export default function Kitchen() {
               <ul className="space-y-3">
                 {[
                   'ISI-certified premium hardwood core',
-                  'Zero-warp and termite proof guarantee',
+                  'Zero-warp and termite resistant guarantee',
                   'High moisture resistant formulation (HMR)'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-xs md:text-sm text-white/80">

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass, Coins, Users } from 'lucide-react';
+import { Send, ShieldCheck, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass, Coins, Users } from 'lucide-react';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -8,7 +8,7 @@ export default function Contact() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [project, setProject] = useState('residential');
-  
+
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -20,9 +20,9 @@ export default function Contact() {
       alert("Please enter either an Email Address or a Mobile Number.");
       return;
     }
-    
+
     setSubmitting(true);
-    
+
     try {
       const formData = new FormData();
       formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
@@ -140,7 +140,7 @@ export default function Contact() {
       {/* 2. FAQ Accordion Section (Local SEO Goldmine) */}
       <section id="faq" className="relative bg-black py-32 border-t border-white/5 flex flex-col items-center justify-center">
         <div className="max-w-4xl mx-auto px-6 w-full text-center">
-          
+
           <div className="mb-16">
             <div className="text-[10px] tracking-[0.4em] text-amber-200/70 uppercase mb-4 font-medium">
               09 · Frequently Asked Questions
@@ -154,8 +154,8 @@ export default function Contact() {
             {faqs.map((faq, idx) => {
               const isOpen = activeFaq === idx;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="rounded-2xl border border-white/5 bg-white/2 overflow-hidden transition-all duration-300 hover:border-amber-200/20"
                 >
                   <button
@@ -165,16 +165,14 @@ export default function Contact() {
                     <span className="text-sm font-medium text-white/90 pr-4">
                       {faq.q}
                     </span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-amber-200/60 transition-transform duration-300 flex-shrink-0 ${
-                        isOpen ? 'rotate-180 text-amber-200' : 'rotate-0'
-                      }`}
+                    <ChevronDown
+                      className={`w-4 h-4 text-amber-200/60 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-amber-200' : 'rotate-0'
+                        }`}
                     />
                   </button>
-                  <div 
-                    className={`transition-all duration-300 ease-in-out ${
-                      isOpen ? 'max-h-[300px] border-t border-white/5 opacity-100 py-5 px-6' : 'max-h-0 opacity-0 pointer-events-none'
-                    } overflow-hidden`}
+                  <div
+                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[300px] border-t border-white/5 opacity-100 py-5 px-6' : 'max-h-0 opacity-0 pointer-events-none'
+                      } overflow-hidden`}
                   >
                     <p className="text-xs text-white/60 leading-relaxed font-light">
                       {faq.a}
@@ -191,7 +189,7 @@ export default function Contact() {
       {/* 3. Why Customers Choose Jagdamba Section (Trust & Local SEO Boost) */}
       <section className="relative bg-neutral-950 py-32 border-t border-white/5 flex flex-col items-center justify-center">
         <div className="max-w-6xl mx-auto px-6 w-full text-center">
-          
+
           <div className="mb-16">
             <div className="text-[10px] tracking-[0.4em] text-amber-200/70 uppercase mb-4 font-medium font-sans">
               Quality Assurance & Trust
@@ -203,7 +201,7 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
             {trustSignals.map((signal, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="p-6 rounded-2xl border border-white/5 bg-white/2 hover:border-amber-200/25 hover:bg-white/5 transition-all duration-500 flex flex-col gap-4 shadow-xl"
               >
@@ -224,9 +222,9 @@ export default function Contact() {
       {/* 4. Main Contact Form Section */}
       <section id="contact" className="relative bg-neutral-950 py-32 flex items-center justify-center border-t border-white/5">
         <div className="max-w-6xl mx-auto px-6 w-full">
-          
+
           <div className="grid md:grid-cols-2 gap-16 items-start w-full">
-            
+
             {/* Left Column: Contact info details */}
             <div className="space-y-10 text-left">
               <div>
@@ -259,15 +257,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <Mail className="w-5 h-5 text-amber-200 mt-1 flex-shrink-0" />
-                  <div>
-                    <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-1">Electronic Mail</div>
-                    <div className="text-sm font-light text-white/80">
-                      studio@jagdambatimber.com
-                    </div>
-                  </div>
-                </div>
+
 
                 {/* Grayscale Dark-Mode Map Embed (High Trust & Local SEO Signal) */}
                 <div className="rounded-xl overflow-hidden border border-white/5 bg-neutral-900/60 aspect-video shadow-lg relative mt-6 h-48 w-full">
@@ -288,8 +278,8 @@ export default function Contact() {
                   <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-3 font-semibold font-sans">Areas We Serve & Supply</div>
                   <div className="flex flex-wrap gap-2">
                     {['Rishikesh', 'Gumaniwala', 'Tapovan', 'Haridwar', 'Dehradun', 'Roorkee', 'Narendra Nagar', 'Jolly Grant'].map((area) => (
-                      <span 
-                        key={area} 
+                      <span
+                        key={area}
                         className="text-[10px] tracking-wider text-amber-200/60 bg-amber-200/5 border border-amber-200/10 px-3 py-1.5 rounded-full hover:border-amber-200/30 hover:text-amber-200 transition-all duration-300 cursor-default"
                       >
                         {area}
@@ -314,7 +304,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6 text-left">
-                  
+
                   {/* Name field */}
                   <div className="space-y-2">
                     <label htmlFor="form-name" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold">
