@@ -131,7 +131,7 @@ export default function MaterialStudio() {
       id: 'vidyalam',
       name: 'Vidyalam Laminate',
       category: 'laminate',
-      image: '/images/vidyalam-laminate.jpg',
+      image: '/images/vidyalam-bedroom.png',
     },
     {
       id: 'virgo',
