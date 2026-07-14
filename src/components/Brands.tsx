@@ -83,7 +83,7 @@ export default function Brands() {
         <img 
           src="/images/hepo-logo.png" 
           alt="HEPO" 
-          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter brightness-0 invert transform group-hover:scale-105" 
         />
       )
     }
