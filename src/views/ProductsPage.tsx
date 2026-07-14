@@ -69,6 +69,18 @@ export default function ProductsPage() {
 
   const activeCat = categories.find((cat) => cat.id === selectedCategory) || categories[0];
 
+  const handleCategorySelect = (id: string) => {
+    setSelectedCategory(id);
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      setTimeout(() => {
+        const target = document.getElementById('product-data');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 80);
+    }
+  };
+
   return (
     <>
       <div className="bg-black pt-32 pb-24 text-left min-h-screen">
@@ -89,7 +101,7 @@ export default function ProductsPage() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => handleCategorySelect(cat.id)}
                 className={`flex items-center gap-2 px-5 py-3 rounded-xl border text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer ${
                   selectedCategory === cat.id
                     ? 'bg-amber-200 border-amber-200 text-black font-semibold shadow-lg shadow-amber-200/10'
@@ -104,7 +116,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Selected Category Detail Grid */}
-        <section className="max-w-6xl mx-auto px-6">
+        <section id="product-data" className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-5 gap-12 items-start">
             
             {/* Left Box: Overview details */}
