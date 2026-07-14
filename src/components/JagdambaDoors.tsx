@@ -15,7 +15,7 @@ const DOORS = [
     features: ['Waterproof Surface', 'Scratch Resistant', 'No Swelling or Warping'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Walnut Brown', 'Dark Espresso', 'Natural Oak'],
-    description: 'PVC membrane doors are vacuum-pressed over a high-density MDF core, delivering a seamless, moisture-resistant surface with zero swelling or warping. Available in wood-grain, solid, and designer finishes — built to last in any room.',
+    description: 'Premium PVC Membrane Doors feature a seamless PVC membrane vacuum-pressed over a solid 30 mm wooden core, ensuring a flawless finish with exceptional durability. Designed for modern interiors, they resist everyday wear, are easy to maintain, and are available in a wide range of wood textures, solid colours, and contemporary designs.',
     priceTag: 'Premium'
   },
   {
@@ -29,7 +29,7 @@ const DOORS = [
     features: ['100% Waterproof', 'Easy to Clean', 'High-Gloss Finish'],
     sizes: ['7×3 ft', '7×3.5 ft', 'Custom'],
     colors: ['Pure White', 'Off-White', 'Pearl Grey'],
-    description: 'PVC membrane doors are vacuum-pressed over a high-density MDF core, delivering a seamless, moisture-resistant surface with zero swelling or warping. Available in wood-grain, solid, and designer finishes — built to last in any room.',
+    description: 'Premium PVC Membrane Doors feature a seamless PVC membrane vacuum-pressed over a solid 30 mm wooden core, ensuring a flawless finish with exceptional durability. Designed for modern interiors, they resist everyday wear, are easy to maintain, and are available in a wide range of wood textures, solid colours, and contemporary designs.',
     priceTag: 'Standard'
   },
   // ── MICA ──────────────────────────────────────────
