@@ -109,7 +109,7 @@ export default function ProjectsPage() {
                   <img 
                     src={p.image} 
                     alt={p.title} 
-                    className="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                    className="w-full h-full object-cover lg:grayscale lg:opacity-70 group-hover:scale-105 lg:group-hover:grayscale-0 lg:group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
