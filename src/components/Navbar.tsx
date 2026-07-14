@@ -17,6 +17,7 @@ export default function Navbar() {
   const menuItems = [
     { name: 'Home', to: '/' },
     { name: 'Products', to: '/products' },
+    { name: 'Our Doors', to: '/#jagdamba-doors' },
     { name: 'Brands', to: '/brands' },
     { name: 'Projects', to: '/projects' },
     { name: 'About', to: '/about' },

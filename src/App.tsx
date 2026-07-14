@@ -15,6 +15,7 @@ import Brands from './components/Brands';
 import LivingRoom from './components/LivingRoom';
 import Kitchen from './components/Kitchen';
 import Dining from './components/Dining';
+import JagdambaDoors from './components/JagdambaDoors';
 import Bedroom from './components/Bedroom';
 import Wardrobe from './components/Wardrobe';
 import Study from './components/Study';
@@ -60,6 +61,7 @@ function HomePage() {
       <LivingRoom />
       <Kitchen />
       <Dining />
+      <JagdambaDoors />
       <Bedroom />
       <Wardrobe />
       <Study />
