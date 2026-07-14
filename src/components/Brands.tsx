@@ -7,7 +7,7 @@ export default function Brands() {
         <img 
           src="/images/century-ply-logo.png" 
           alt="Century Ply" 
-          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter grayscale brightness-200 contrast-125 transform group-hover:scale-105" 
+          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
         />
       )
     },
