@@ -22,7 +22,7 @@ const DOORS = [
     id: 2,
     name: 'Glacier White',
     category: 'membrane',
-    image: '/images/membrane-door-classic.webp',
+    image: '/images/membrane-door-diamond.png',
     finish: 'Membrane Door',
     material: 'HDF Core with Glossy PVC Membrane',
     bestUse: 'Kitchen, Bathroom, Utility',
