@@ -1,7 +1,7 @@
 export default function Brands() {
   const brands = [
     { name: 'Century Ply', type: 'Premium Plywood & Veneers' },
-    { name: 'Action TESA', type: 'HDHMR & Particle Boards' },
+    { name: 'Action TESA', type: 'HDMR & Particle Boards' },
     { name: 'Novopan', type: 'Engineered Wood Panels' },
     { name: 'Saptam', type: 'Luxury Flush Doors' },
     { name: 'Black Cobra', type: 'Decorative Laminates' },

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown } from 'lucide-react';
+import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass } from 'lucide-react';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -23,12 +23,12 @@ export default function Contact() {
 
   const faqs = [
     {
-      q: "Which HDHMR/HDMR board is best for modular kitchens in Rishikesh?",
-      a: "We highly recommend Century Prowud or Action TESA HDHMR boards for modular kitchens in Rishikesh's climate. They offer maximum density and moisture resistance, preventing swelling and warping over decades of use."
+      q: "Which HDMR board is best for modular kitchens in Rishikesh?",
+      a: "We highly recommend Century Prowud or Action TESA HDMR boards for modular kitchens in Rishikesh's climate. They offer maximum density and moisture resistance, preventing swelling and warping over decades of use."
     },
     {
-      q: "What is the difference between HDHMR and normal commercial plywood?",
-      a: "HDHMR (High-Density High-Moisture Resistant) boards are made by compressing fine wood fibers under high pressure, providing absolute water resistance and density. Commercial plywood consists of layered veneers which can split or swell in wet zones. HDHMR is superior for kitchens, vanities, and bathroom units."
+      q: "What is the difference between HDMR and normal commercial plywood?",
+      a: "HDMR (High-Density Moisture Resistant) boards are made by compressing fine wood fibers under high pressure, providing absolute water resistance and density. Commercial plywood consists of layered veneers which can split or swell in wet zones. HDMR is superior for kitchens, vanities, and bathroom units."
     },
     {
       q: "Do you manufacture custom wooden doors and almirah cabinets in Rishikesh?",
@@ -41,6 +41,39 @@ export default function Contact() {
     {
       q: "Which plywood grade should be used for bedroom wardrobes and TV units?",
       a: "For bedroom wardrobes and TV units, we recommend MR (Moisture Resistant) or BWP (Boiling Water Proof) grade plywood, combined with premium wood veneers or structural laminates to resist temperature changes."
+    }
+  ];
+
+  const trustSignals = [
+    {
+      icon: <Award className="w-5 h-5 text-amber-200" />,
+      title: "Retail & Wholesale",
+      desc: "Direct volume pricing for major commercial builders, architects, carpenters, and residential homeowners."
+    },
+    {
+      icon: <CheckCircle className="w-5 h-5 text-amber-200" />,
+      title: "100% Genuine Materials",
+      desc: "Authorized partner channels with verified manufacturing warranties and official batch certifications."
+    },
+    {
+      icon: <Compass className="w-5 h-5 text-amber-200" />,
+      title: "Signature Doors Manufacturer",
+      desc: "Custom sizing, engineered solid cores, and bespoke veneers designed and manufactured in our local workshop."
+    },
+    {
+      icon: <Package className="w-5 h-5 text-amber-200" />,
+      title: "Trusted Global Brands",
+      desc: "Authorized dealer status with Century Ply, Action TESA, Virgo Laminates, Black Cobra, and HEPO fittings."
+    },
+    {
+      icon: <MapPin className="w-5 h-5 text-amber-200" />,
+      title: "Located in Rishikesh",
+      desc: "Showroom located at Gumaniwala, Rishikesh to supply area construction sites with immediate logisitics."
+    },
+    {
+      icon: <Truck className="w-5 h-5 text-amber-200" />,
+      title: "Serving Uttarakhand",
+      desc: "Prompt logistics and direct transport networks serving Dehradun, Haridwar, Roorkee, and Tapovan."
     }
   ];
 
@@ -111,7 +144,40 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* 3. Main Contact Form Section */}
+      {/* 3. Why Customers Choose Jagdamba Section (Trust & Local SEO Boost) */}
+      <section className="relative bg-neutral-950 py-32 border-t border-white/5 flex flex-col items-center justify-center">
+        <div className="max-w-6xl mx-auto px-6 w-full text-center">
+          
+          <div className="mb-16">
+            <div className="text-[10px] tracking-[0.4em] text-amber-200/70 uppercase mb-4 font-medium font-sans">
+              Quality Assurance & Trust
+            </div>
+            <h2 className="font-serif-display text-4xl md:text-5xl font-light text-white leading-tight">
+              Why builders, architects & homeowners<br />choose Jagdamba.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
+            {trustSignals.map((signal, idx) => (
+              <div 
+                key={idx}
+                className="p-6 rounded-2xl border border-white/5 bg-white/2 hover:border-amber-200/25 hover:bg-white/5 transition-all duration-500 flex flex-col gap-4 shadow-xl"
+              >
+                <div className="w-10 h-10 rounded-full bg-amber-200/10 flex items-center justify-center border border-amber-200/20">
+                  {signal.icon}
+                </div>
+                <div>
+                  <h3 className="font-serif-display text-lg text-white font-light mb-2">{signal.title}</h3>
+                  <p className="text-xs text-white/50 leading-relaxed font-light font-sans">{signal.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. Main Contact Form Section */}
       <section id="contact" className="relative bg-neutral-950 py-32 flex items-center justify-center border-t border-white/5">
         <div className="max-w-6xl mx-auto px-6 w-full">
           
@@ -132,7 +198,7 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-amber-200 mt-1 flex-shrink-0" />
                   <div>
-                    <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-1">Corporate Studio</div>
+                    <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-1">Corporate Showroom</div>
                     <div className="text-sm font-light text-white/80">
                       Devendra Vihar Gali No. 11, Gumaniwala, Rishikesh (Near DSB School), Uttarakhand, India
                     </div>
@@ -288,7 +354,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* 4. Content-Rich Global Footer (SEO & User Experience Boost) */}
+      {/* 5. Content-Rich Global Footer (SEO & User Experience Boost) */}
       <footer className="bg-black border-t border-white/5 pt-24 pb-12 overflow-hidden text-left">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
           
@@ -322,7 +388,7 @@ export default function Contact() {
             <h4 className="text-[10px] tracking-[0.25em] uppercase text-white/80 font-semibold mb-6">Offerings</h4>
             <ul className="space-y-3 text-xs text-white/40 font-light">
               <li><a href="#living" className="hover:text-amber-200 transition-colors">Premium Plywood</a></li>
-              <li><a href="#kitchen" className="hover:text-amber-200 transition-colors">HDHMR Boards</a></li>
+              <li><a href="#kitchen" className="hover:text-amber-200 transition-colors">HDMR Boards</a></li>
               <li><a href="#studio" className="hover:text-amber-200 transition-colors">Teak Veneers</a></li>
               <li><a href="#bedroom" className="hover:text-amber-200 transition-colors">Jagdamba Doors</a></li>
               <li><a href="#configurator" className="hover:text-amber-200 transition-colors">Cabinet Hardware</a></li>
