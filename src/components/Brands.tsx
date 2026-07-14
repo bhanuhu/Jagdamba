@@ -58,9 +58,11 @@ export default function Brands() {
       name: 'Virgo Laminates', 
       type: 'High-Gloss Sheets',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
+        <img 
+          src="/images/virgo-logo.jpg" 
+          alt="Virgo" 
+          className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     },
     { 
