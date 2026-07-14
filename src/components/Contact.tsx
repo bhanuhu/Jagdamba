@@ -8,6 +8,7 @@ export default function Contact() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [project, setProject] = useState('residential');
+  const [file, setFile] = useState<File | null>(null);
   
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -15,25 +16,29 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !phone || !message) return;
+    if (!name) return;
+    if (!email.trim() && !phone.trim()) {
+      alert("Please enter either an Email Address or a Mobile Number.");
+      return;
+    }
     
     setSubmitting(true);
     
     try {
+      const formData = new FormData();
+      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      formData.append("name", name);
+      if (email.trim()) formData.append("email", email);
+      if (phone.trim()) formData.append("phone", phone);
+      formData.append("project", project);
+      if (message.trim()) formData.append("message", message);
+      if (file) {
+        formData.append("attachment", file);
+      }
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
-          name: name,
-          email: email,
-          phone: phone,
-          project: project,
-          message: message,
-        }),
+        body: formData,
       });
 
       const result = await response.json();
@@ -43,6 +48,7 @@ export default function Contact() {
         setEmail('');
         setPhone('');
         setMessage('');
+        setFile(null);
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert("Submission failed: " + (result.message || "Unknown error"));
@@ -332,13 +338,13 @@ export default function Contact() {
 
                   {/* Email field */}
                   <div className="space-y-2">
-                    <label htmlFor="form-email" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold">
-                      Email Address
+                    <label htmlFor="form-email" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold flex justify-between">
+                      <span>Email Address</span>
+                      <span className="text-[8px] text-amber-200/50 normal-case font-light font-sans">(Or Mobile Number)</span>
                     </label>
                     <input
                       id="form-email"
                       type="email"
-                      required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="alex@example.com"
@@ -348,13 +354,13 @@ export default function Contact() {
 
                   {/* Phone field */}
                   <div className="space-y-2">
-                    <label htmlFor="form-phone" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold">
-                      Mobile Number
+                    <label htmlFor="form-phone" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold flex justify-between">
+                      <span>Mobile Number</span>
+                      <span className="text-[8px] text-amber-200/50 normal-case font-light font-sans">(Or Email Address)</span>
                     </label>
                     <input
                       id="form-phone"
                       type="tel"
-                      required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="E.g. 9412678698"
@@ -383,16 +389,30 @@ export default function Contact() {
                   {/* Message field */}
                   <div className="space-y-2">
                     <label htmlFor="form-message" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold">
-                      Brief Message
+                      Brief Message (Optional)
                     </label>
                     <textarea
                       id="form-message"
-                      required
                       rows={4}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Describe your design vision, timelines, and material requirements..."
                       className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors resize-none"
+                    />
+                  </div>
+
+                  {/* Reference design image upload */}
+                  <div className="space-y-2">
+                    <label htmlFor="form-file" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold flex items-center justify-between">
+                      <span>Reference Image (Optional)</span>
+                      {file && <span className="text-[8px] text-amber-200 capitalize font-sans">{file.name}</span>}
+                    </label>
+                    <input
+                      id="form-file"
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+                      className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-[10px] file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 file:cursor-pointer"
                     />
                   </div>
 
