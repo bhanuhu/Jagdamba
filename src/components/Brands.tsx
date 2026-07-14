@@ -15,9 +15,11 @@ export default function Brands() {
       name: 'Action TESA', 
       type: 'HDMR & Particle Boards',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10zM12 6v10M9 10h6" />
-        </svg>
+        <img 
+          src="/images/action-tesa-logo.png" 
+          alt="Action TESA" 
+          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     },
     { 
