@@ -42,22 +42,14 @@ export default function Bedroom() {
   // 3. Door swing inside the card (Phase 3)
   // Starts closed, opens between 0.15 and 0.45
   let doorRotation = 0;
-  let roomScale = 1.15;
-  let roomOpacity = 0.4;
 
   if (scrollProgress < 0.15) {
     doorRotation = 0;
-    roomScale = 1.15;
-    roomOpacity = 0.4;
   } else if (scrollProgress >= 0.15 && scrollProgress <= 0.45) {
     const factor = (scrollProgress - 0.15) / 0.3; // 0 to 1
     doorRotation = -95 * factor;
-    roomScale = 1.15 - factor * 0.15;
-    roomOpacity = 0.4 + factor * 0.6;
   } else {
     doorRotation = -95;
-    roomScale = 1.0;
-    roomOpacity = 1.0;
   }
 
   // 4. Large narrative text details (fades in as card fades out)
@@ -78,9 +70,9 @@ export default function Bedroom() {
   return (
     <section ref={containerRef} id="bedroom" className="relative h-[280vh] bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-        
+
         {/* Master Bedroom Background Image */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full pointer-events-none"
           style={{
             transform: `scale(${bgScale})`,
@@ -88,31 +80,31 @@ export default function Bedroom() {
             transition: 'transform 0.1s ease-out'
           }}
         >
-          <img 
-            src="/images/master-bedroom-design.jpg" 
-            alt="Master Bedroom" 
+          <img
+            src="/images/master-bedroom-design.jpg"
+            alt="Master Bedroom"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
         </div>
 
         {/* 3D Opening Door Card (Starts fully visible, fades out later) */}
-        <div 
+        <div
           className="absolute z-20 flex items-center justify-center"
-          style={{ 
-            opacity: cardOpacity, 
+          style={{
+            opacity: cardOpacity,
             transform: `scale(${cardScale})`,
             transition: 'transform 0.1s ease-out',
             pointerEvents: cardOpacity > 0.5 ? 'auto' : 'none'
           }}
         >
           {/* Card Container with Perspective */}
-          <div 
+          <div
             className="relative w-[min(80vw,520px)] aspect-[3/5] rounded-lg overflow-hidden shadow-[0_60px_120px_-20px_rgba(255,180,90,0.4)] bg-neutral-900 border border-white/10"
             style={{ perspective: '1500px' }}
           >
             {/* Underlying Room Visual (Inside the door) */}
-            <div 
+            {/* <div 
               className="absolute inset-0 transition-all duration-100 ease-out"
               style={{
                 backgroundImage: 'url(/images/bedroom-material-card.jpg)',
@@ -121,11 +113,11 @@ export default function Bedroom() {
                 transform: `scale(${roomScale})`,
                 opacity: roomOpacity,
               }}
-            />
+            /> */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none" />
 
             {/* 3D Swinging Door Panel */}
-            <div 
+            <div
               className="door-panel absolute inset-0 origin-left"
               style={{
                 transform: `rotateY(${doorRotation}deg)`,
@@ -134,16 +126,16 @@ export default function Bedroom() {
               }}
             >
               {/* Door Surface Image */}
-              <img 
-                src="/images/doors-bedroom-inside.jpg" 
-                alt="Jagdamba Door Veneer" 
+              <img
+                src="/images/doors-bedroom-inside.jpg"
+                alt="Jagdamba Door Veneer"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/60 pointer-events-none" />
-              
+
               {/* Gold Handle */}
               <div className="absolute right-5 top-1/2 -translate-y-1/2 w-1.5 h-16 bg-amber-200/80 rounded-full shadow-[0_0_15px_rgba(253,230,138,0.5)] border border-amber-100/30" />
-              
+
               {/* Inlay Borders */}
               <div className="absolute inset-5 border border-amber-100/10 rounded pointer-events-none" />
             </div>
@@ -164,9 +156,9 @@ export default function Bedroom() {
         </div>
 
         {/* Narrative details (Fades in as the card fades out) */}
-        <div 
+        <div
           className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6 pointer-events-none"
-          style={{ 
+          style={{
             opacity: textOpacity,
             transform: `translate3d(0, ${textTranslateY}px, 0)`,
           }}
