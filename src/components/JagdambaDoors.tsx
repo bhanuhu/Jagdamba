@@ -70,10 +70,10 @@ const DOORS = [
     finish: 'WPC Door',
     material: 'Wood-Plastic Composite (WPC)',
     bestUse: 'Bathroom, Balcony, Outdoor-Facing',
-    features: ['100% Waterproof', 'Termite Proof', 'No Rot or Rust'],
+    features: ['Water Resistant', 'Termite Proof', 'Moisture Resistant', 'Long Lasting'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Natural Teak', 'Walnut', 'Ivory White', 'Grey'],
-    description: 'WPC (Wood-Plastic Composite) doors are engineered to be 100% waterproof, termite-proof, and rot-proof — making them the best choice for bathrooms, balconies, and high-moisture areas. Zero maintenance, long life.',
+    description: 'Premium WPC Doors combine the strength of Wood Plastic Composite with contemporary design, delivering doors that are moisture-resistant, termite-proof, and highly durable. Ideal for high-humidity spaces, they offer lasting performance with minimal maintenance.',
     priceTag: 'Premium'
   },
   {
@@ -84,10 +84,10 @@ const DOORS = [
     finish: 'WPC Door',
     material: 'Premium WPC with Textured Surface',
     bestUse: 'Master Bathroom, Kitchen, Service Areas',
-    features: ['Zero Maintenance', 'UV Resistant', 'Fire Retardant Grade'],
+    features: ['Water Resistant', 'Termite Proof', 'Moisture Resistant', 'Long Lasting'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
     colors: ['Dark Walnut', 'Sand Beige', 'Charcoal'],
-    description: 'WPC (Wood-Plastic Composite) doors are engineered to be 100% waterproof, termite-proof, and rot-proof — making them the best choice for bathrooms, balconies, and high-moisture areas. Zero maintenance, long life.',
+    description: 'Premium WPC Doors combine the strength of Wood Plastic Composite with contemporary design, delivering doors that are moisture-resistant, termite-proof, and highly durable. Ideal for high-humidity spaces, they offer lasting performance with minimal maintenance.',
     priceTag: 'Premium'
   },
 ];
