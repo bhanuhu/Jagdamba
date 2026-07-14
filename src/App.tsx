@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Entrance from './components/Entrance';
+import Brands from './components/Brands';
 import LivingRoom from './components/LivingRoom';
 import Kitchen from './components/Kitchen';
 import Dining from './components/Dining';
@@ -12,6 +13,7 @@ import Configurator from './components/Configurator';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -27,6 +29,9 @@ function App() {
 
       {/* Entrance Y-rotation door */}
       <Entrance />
+
+      {/* Authorized brand trust showcase */}
+      <Brands />
 
       {/* Living room hotspots */}
       <LivingRoom />
@@ -57,6 +62,9 @@ function App() {
 
       {/* Inquiry and contact details + footer */}
       <Contact />
+
+      {/* Floating WhatsApp Action Widget */}
+      <FloatingWhatsApp />
     </main>
   );
 }

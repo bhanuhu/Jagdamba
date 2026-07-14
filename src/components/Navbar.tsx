@@ -61,12 +61,12 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            {/* Inquire Button */}
+            {/* Get Quote Button */}
             <a
               href="#contact"
               className="hidden md:inline-flex items-center gap-2 text-[10px] tracking-[0.2em] font-semibold uppercase px-5 py-2.5 rounded-full bg-amber-200 text-black hover:bg-amber-100 transition-colors"
             >
-              Inquire
+              Get Quote
             </a>
 
             {/* Mobile Menu Button */}
@@ -103,7 +103,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="mt-4 text-[10px] tracking-[0.2em] font-semibold uppercase px-8 py-3 rounded-full bg-amber-200 text-black hover:bg-amber-100 transition-colors"
           >
-            Inquire
+            Get Quote
           </a>
         </div>
       </div>

@@ -172,6 +172,21 @@ export default function Contact() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
+
+                {/* Areas We Serve Local SEO tags */}
+                <div className="mt-8 pt-6 border-t border-white/5">
+                  <div className="text-[9px] tracking-[0.2em] uppercase text-white/40 mb-3 font-semibold font-sans">Areas We Serve & Supply</div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Rishikesh', 'Gumaniwala', 'Tapovan', 'Haridwar', 'Dehradun', 'Roorkee', 'Narendra Nagar', 'Jolly Grant'].map((area) => (
+                      <span 
+                        key={area} 
+                        className="text-[10px] tracking-wider text-amber-200/60 bg-amber-200/5 border border-amber-200/10 px-3 py-1.5 rounded-full hover:border-amber-200/30 hover:text-amber-200 transition-all duration-300 cursor-default"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -261,7 +276,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-amber-200 hover:bg-amber-100 text-black font-semibold text-xs tracking-wider uppercase transition-colors shadow-lg shadow-amber-200/10 cursor-pointer"
                   >
-                    <Send className="w-4 h-4" /> Send Inquiry
+                    <Send className="w-4 h-4" /> Request Consultation
                   </button>
 
                 </form>
