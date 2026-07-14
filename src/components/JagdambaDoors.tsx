@@ -3,104 +3,115 @@ import { useScrollProgress } from '../hooks/useScrollProgress';
 
 // Door catalogue data
 const DOORS = [
+  // ── MEMBRANE ──────────────────────────────────────
   {
     id: 1,
     name: 'Royal Walnut',
     category: 'membrane',
-    style: 'classic',
     image: '/images/jagdamba-doors-timber.jpg',
-    finish: 'Premium Membrane',
-    material: 'High-Density MDF Core',
-    bestUse: 'Master Bedroom, Study',
-    features: ['Waterproof Coating', 'Scratch Resistant', 'Elegant Grain'],
+    finish: 'Membrane Door',
+    material: 'High-Density MDF Core with PVC Membrane',
+    bestUse: 'Bedroom, Study, Pooja Room',
+    features: ['Waterproof Surface', 'Scratch Resistant', 'No Swelling or Warping'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
-    colors: ['Walnut Brown', 'Dark Espresso', 'Natural Teak'],
-    description: 'A timeless walnut grain membrane door with a rich, warm finish. Crafted with high-density MDF core for superior sound insulation and a lifetime of elegant performance.',
+    colors: ['Walnut Brown', 'Dark Espresso', 'Natural Oak'],
+    description: 'A rich walnut-finish PVC membrane door vacuum-pressed over high-density MDF. Moisture and scratch resistant — perfect for bedrooms and humid-prone rooms.',
     priceTag: 'Premium'
   },
   {
     id: 2,
     name: 'Glacier White',
     category: 'membrane',
-    style: 'modern',
     image: '/images/jagdamba-door-membrane.jpg',
-    finish: 'Glossy Membrane',
-    material: 'HDF Moisture Guard Core',
-    bestUse: 'Kitchen, Bathroom',
-    features: ['100% Waterproof', 'Easy to Clean', 'Modern Finish'],
+    finish: 'Membrane Door',
+    material: 'HDF Core with Glossy PVC Membrane',
+    bestUse: 'Kitchen, Bathroom, Utility',
+    features: ['100% Waterproof', 'Easy to Clean', 'High-Gloss Finish'],
     sizes: ['7×3 ft', '7×3.5 ft', 'Custom'],
-    colors: ['Pure White', 'Off-White', 'Pearl'],
-    description: 'Clean, modern high-gloss membrane door. Engineered with HDF Moisture Guard core — ideal for kitchen and bathroom environments where aesthetics meet function.',
+    colors: ['Pure White', 'Off-White', 'Pearl Grey'],
+    description: 'Sleek glossy membrane door on HDF core. The high-gloss surface is non-porous, moisture-proof, and effortlessly wipes clean — ideal for kitchens and bathrooms.',
     priceTag: 'Standard'
   },
+  // ── MICA ──────────────────────────────────────────
   {
     id: 3,
-    name: 'Heritage Teak',
-    category: 'veneer',
-    style: 'classic',
+    name: 'Heritage Mica',
+    category: 'mica',
     image: '/images/jagdamba-door-teak.jpg',
-    finish: 'Natural Teak Veneer',
-    material: 'Solid Timber Core',
-    bestUse: 'Main Entry, Drawing Room',
-    features: ['Real Wood Grain', 'Solid Core Strength', 'Heirloom Quality'],
-    sizes: ['8×3.5 ft', '8×4 ft', '9×4 ft', 'Custom'],
-    colors: ['Golden Teak', 'Aged Teak', 'Dark Teak'],
-    description: 'Authentic natural teak veneer over a solid timber core. This door tells a story — every grain line is unique. Reserved for the entrance that deserves to make an impression.',
-    priceTag: 'Luxury'
+    finish: 'Mica Door',
+    material: 'Solid Flush Core + High-Pressure Mica Laminate',
+    bestUse: 'Main Entry, Drawing Room, Office',
+    features: ['Heat Resistant', 'Durable Surface', 'Premium Texture'],
+    sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', '8×3.5 ft', 'Custom'],
+    colors: ['Teak Wood', 'Rosewood', 'Wenge', 'Light Maple'],
+    description: 'High-pressure mica laminate bonded over a solid flush core. Delivers rich wood-look texture with superior heat and impact resistance — a practical classic.',
+    priceTag: 'Standard'
   },
   {
     id: 4,
-    name: 'Obsidian Flush',
-    category: 'flush',
-    style: 'modern',
+    name: 'Obsidian Mica',
+    category: 'mica',
     image: '/images/jagdamba-door-flush.jpg',
-    finish: 'Matte Laminate',
-    material: 'Engineered Wood Core',
-    bestUse: 'Office, Utility, Interior',
-    features: ['Uniform Surface', 'Paintable', 'Cost Effective'],
+    finish: 'Mica Door',
+    material: 'Engineered Wood Core + Matte Mica',
+    bestUse: 'Bedroom, Study, Commercial Space',
+    features: ['Uniform Matte Surface', 'Scratch Resistant', 'Cost Effective'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft'],
-    colors: ['Midnight Black', 'Charcoal', 'Stone Grey'],
-    description: 'Contemporary flush door in a sleek matte laminate finish. A versatile, architectural choice for modern homes and commercial spaces that value clean lines.',
+    colors: ['Midnight Black', 'Charcoal Grey', 'Stone Beige'],
+    description: 'Contemporary matte mica door on engineered wood core. Clean, architectural lines with a durable surface — a versatile choice for modern homes and offices.',
     priceTag: 'Standard'
   },
+  // ── WPC ───────────────────────────────────────────
   {
     id: 5,
-    name: 'Bespoke Arc',
-    category: 'designer',
-    style: 'custom',
-    image: '/images/jagdamba-door-designer.jpg',
-    finish: 'Multi-Tone Designer Panel',
-    material: 'Engineered Core + MDF Frame',
-    bestUse: 'Living Room, Villa Entry',
-    features: ['CNC Engraved', 'Custom Panel Design', 'Statement Piece'],
-    sizes: ['8×4 ft', '9×4 ft', 'Fully Custom'],
-    colors: ['Champagne Gold', 'Bronze Inlay', 'Ivory + Walnut'],
-    description: 'Hand-crafted designer door with CNC precision panel work. Each piece is a collaboration between you and our master craftsmen. No two are identical.',
-    priceTag: 'Bespoke'
+    name: 'WPC Marine',
+    category: 'wpc',
+    image: '/images/jagdamba-door-veneer.jpg',
+    finish: 'WPC Door',
+    material: 'Wood-Plastic Composite (WPC)',
+    bestUse: 'Bathroom, Balcony, Outdoor-Facing',
+    features: ['100% Waterproof', 'Termite Proof', 'No Rot or Rust'],
+    sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
+    colors: ['Natural Teak', 'Walnut', 'Ivory White', 'Grey'],
+    description: 'Engineered from wood-plastic composite — completely waterproof, termite-proof, and rot-proof. The ideal door for bathrooms, wet areas, and outdoor-facing rooms.',
+    priceTag: 'Premium'
   },
   {
     id: 6,
-    name: 'Havana Veneer',
-    category: 'veneer',
-    style: 'classic',
-    image: '/images/jagdamba-door-veneer.jpg',
-    finish: 'Cross-Band Veneer',
-    material: 'Marine Grade Plywood Core',
-    bestUse: 'Bedroom, Wardrobe Panels',
-    features: ['Anti-Warp Core', 'Rich Texture', 'BWR Grade'],
+    name: 'WPC Luxe',
+    category: 'wpc',
+    image: '/images/jagdamba-door-walnut.jpg',
+    finish: 'WPC Door',
+    material: 'Premium WPC with Textured Surface',
+    bestUse: 'Master Bathroom, Kitchen, Service Areas',
+    features: ['Zero Maintenance', 'UV Resistant', 'Fire Retardant Grade'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', 'Custom'],
-    colors: ['Havana Brown', 'Light Maple', 'Dark Cherry'],
-    description: 'Rich cross-banded veneer over marine-grade plywood. Built with precision anti-warp construction for doors that hold their shape through India\'s climate extremes.',
+    colors: ['Dark Walnut', 'Sand Beige', 'Charcoal'],
+    description: 'Premium WPC door with a tactile wood-grain texture and fire-retardant core. Built for high-moisture and heavy-use areas where quality cannot be compromised.',
     priceTag: 'Premium'
+  },
+  // ── CUSTOM ────────────────────────────────────────
+  {
+    id: 7,
+    name: 'Bespoke Arc',
+    category: 'custom',
+    image: '/images/jagdamba-door-designer.jpg',
+    finish: 'Custom Design Door',
+    material: 'Client-Specified Core + Finish',
+    bestUse: 'Villa Entry, Living Room, Statement Spaces',
+    features: ['CNC Panel Carving', 'Any Finish Possible', 'Unique Every Time'],
+    sizes: ['Any Size — Fully Custom'],
+    colors: ['Your Choice', 'Champagne Gold Inlay', 'Ivory + Walnut Combo'],
+    description: 'A true one-of-a-kind. You decide the size, finish, color, and panel design. Our craftsmen bring your vision to life with CNC precision and handcrafted detailing.',
+    priceTag: 'Bespoke'
   }
 ];
 
 const FILTERS = [
   { id: 'all', label: 'All' },
-  { id: 'modern', label: 'Modern' },
-  { id: 'classic', label: 'Classic' },
   { id: 'membrane', label: 'Membrane' },
-  { id: 'veneer', label: 'Wood Veneer' },
+  { id: 'mica', label: 'Mica' },
+  { id: 'wpc', label: 'WPC' },
   { id: 'custom', label: 'Custom' }
 ];
 
@@ -176,9 +187,6 @@ export default function JagdambaDoors() {
 
   const filteredDoors = DOORS.filter(d => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'modern' || activeFilter === 'classic' || activeFilter === 'custom') {
-      return d.style === activeFilter;
-    }
     return d.category === activeFilter;
   });
 
