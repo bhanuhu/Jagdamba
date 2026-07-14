@@ -132,6 +132,24 @@ export default function ProductsPage() {
                   </ul>
                 </div>
               </div>
+
+              {activeCat.id === 'doors' && (
+                <a 
+                  href="/jd doors.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-5 rounded-2xl border border-amber-400/20 bg-amber-400/5 hover:bg-amber-400/10 hover:border-amber-400/30 transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.05)] w-full cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">📄</span>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-white group-hover:text-amber-200 transition-colors font-serif-display">View Doors Catalogue</div>
+                      <div className="text-[10px] text-white/40 font-sans font-light">Explore sizes, WPC specs &amp; designs</div>
+                    </div>
+                  </div>
+                  <span className="text-amber-400 font-semibold text-xs tracking-wider transition-transform group-hover:translate-x-1 duration-300">→</span>
+                </a>
+              )}
             </div>
 
             {/* Right Box: Brands and sizing specifications */}
@@ -150,23 +168,6 @@ export default function ProductsPage() {
                   </div>
                 ))}
               </div>
-
-              {activeCat.id === 'doors' && (
-                <div className="p-6 rounded-2xl border border-amber-400/20 bg-amber-400/5 flex items-center justify-between mt-4">
-                  <div>
-                    <h4 className="text-sm font-medium text-white mb-1 font-serif-display">Jagdamba Doors Catalogue</h4>
-                    <p className="text-[10px] text-white/50 font-light font-sans">Explore dimensions, material options, WPC spec sheets & designs.</p>
-                  </div>
-                  <a 
-                    href="/jd doors.pdf" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-black text-[10px] uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 shadow-[0_0_20px_rgba(251,191,36,0.15)] whitespace-nowrap shrink-0"
-                  >
-                    <span>📄</span> View Catalogue
-                  </a>
-                </div>
-              )}
 
               {/* Call-to-action */}
               <div className="p-6 rounded-2xl border border-dashed border-amber-200/10 bg-amber-200/2 flex items-center justify-between mt-8">
