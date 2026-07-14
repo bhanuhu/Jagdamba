@@ -119,7 +119,7 @@ export default function MaterialStudio() {
       id: 'novopan-board',
       name: 'Novopan Board',
       category: 'board',
-      image: '/images/novopan-board.jpg',
+      image: '/images/novopan-kitchen.png',
     },
     {
       id: 'black-cobra',
