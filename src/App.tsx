@@ -1,4 +1,14 @@
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
+// Global Components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+
+// Homepage Components
 import Hero from './components/Hero';
 import Brands from './components/Brands';
 import LivingRoom from './components/LivingRoom';
@@ -11,57 +21,88 @@ import MaterialStudio from './components/MaterialStudio';
 import Configurator from './components/Configurator';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-import CustomCursor from './components/CustomCursor';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
+
+// Supplementary Pages
+import AboutPage from './pages/AboutPage';
+import ProductsPage from './pages/ProductsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import BrandsPage from './pages/BrandsPage';
+import BlogPage from './pages/BlogPage';
+
+// Scroll to top helper on route navigation change
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    // If navigating to homepage and there's a hash, let browser handle the anchor target
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    // Otherwise scroll cleanly to top of page
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+}
+
+// Homepage layout wrapper
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Brands />
+      <LivingRoom />
+      <Kitchen />
+      <Dining />
+      <Bedroom />
+      <Wardrobe />
+      <Study />
+      <MaterialStudio />
+      <Configurator />
+      <Gallery />
+      <Contact />
+    </>
+  );
+}
 
 function App() {
   return (
-    <main className="relative min-h-screen bg-black text-white antialiased selection:bg-amber-300/30 selection:text-amber-100">
-      {/* Custom nail and hammer active cursor */}
-      <CustomCursor />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <main className="relative min-h-screen bg-black text-white antialiased selection:bg-amber-300/30 selection:text-amber-100 flex flex-col justify-between">
+          
+          {/* Custom nail and hammer active cursor */}
+          <CustomCursor />
 
-      {/* Fixed Navigation bar */}
-      <Navbar />
+          {/* Fixed Navigation bar */}
+          <Navbar />
 
-      {/* Hero scroll section */}
-      <Hero />
+          {/* Routed Views */}
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/brands" element={<BrandsPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+            </Routes>
+          </div>
 
-      {/* Authorized brand trust showcase */}
-      <Brands />
+          {/* Standalone clean global footer details */}
+          <Footer />
 
-      {/* Living room hotspots */}
-      <LivingRoom />
+          {/* Floating WhatsApp Action Widget */}
+          <FloatingWhatsApp />
 
-      {/* Kitchen board tab selector */}
-      <Kitchen />
-
-      {/* Dining parallax transition */}
-      <Dining />
-
-      {/* Bedroom scale-bound flagging doors */}
-      <Bedroom />
-
-      {/* Wardrobe 3D open hinges */}
-      <Wardrobe />
-
-      {/* Study deep work layout */}
-      <Study />
-
-      {/* Material studio hover rotate cards */}
-      <MaterialStudio />
-
-      {/* Interactive room configurator */}
-      <Configurator />
-
-      {/* Project Showcase gallery */}
-      <Gallery />
-
-      {/* Inquiry and contact details + footer */}
-      <Contact />
-
-      {/* Floating WhatsApp Action Widget */}
-      <FloatingWhatsApp />
-    </main>
+        </main>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -14,13 +15,12 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: 'Living', href: '#living' },
-    { name: 'Kitchen', href: '#kitchen' },
-    { name: 'Bedroom', href: '#bedroom' },
-    { name: 'Studio', href: '#studio' },
-    { name: 'Configurator', href: '#configurator' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', to: '/' },
+    { name: 'Products', to: '/products' },
+    { name: 'Brands', to: '/brands' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'About', to: '/about' },
+    { name: 'Knowledge', to: '/blog' },
   ];
 
   return (
@@ -31,8 +31,9 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+          
           {/* Logo */}
-          <a href="#top" className="font-serif-display text-lg md:text-xl tracking-wider text-amber-100 flex items-center gap-3">
+          <Link to="/" className="font-serif-display text-lg md:text-xl tracking-wider text-amber-100 flex items-center gap-3">
             <img 
               src="/favicon.png" 
               alt="Jagdamba Logo" 
@@ -41,33 +42,33 @@ export default function Navbar() {
             <span className="flex flex-col md:flex-row md:items-center">
               Jagdamba
               <span className="text-amber-200/60 text-[10px] md:ml-2 tracking-[0.3em] font-sans font-light uppercase">
-                TIMBER WORKS
+                TIMBER WORKS & PLYWOOD
               </span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 className="text-[10px] tracking-[0.25em] uppercase text-white/60 hover:text-amber-200 transition-colors font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Actions */}
           <div className="flex items-center gap-3">
             {/* Get Quote Button */}
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               className="hidden md:inline-flex items-center gap-2 text-[10px] tracking-[0.2em] font-semibold uppercase px-5 py-2.5 rounded-full bg-amber-200 text-black hover:bg-amber-100 transition-colors"
             >
               Get Quote
-            </a>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -78,6 +79,7 @@ export default function Navbar() {
               {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
+
         </div>
       </nav>
 
@@ -89,22 +91,22 @@ export default function Navbar() {
       >
         <div className="flex flex-col items-center gap-8">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.to}
               onClick={() => setIsOpen(false)}
               className="text-lg tracking-[0.3em] uppercase text-white/80 hover:text-amber-200 transition-colors font-serif-display"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             onClick={() => setIsOpen(false)}
-            className="mt-4 text-[10px] tracking-[0.2em] font-semibold uppercase px-8 py-3 rounded-full bg-amber-200 text-black hover:bg-amber-100 transition-colors"
+            className="inline-flex items-center gap-2 text-xs tracking-[0.25em] font-semibold uppercase px-6 py-3 rounded-full bg-amber-200 text-black hover:bg-amber-100 transition-colors mt-4"
           >
             Get Quote
-          </a>
+          </Link>
         </div>
       </div>
     </>
