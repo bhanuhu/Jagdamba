@@ -276,6 +276,16 @@ export default function Contact() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
+                <div className="mt-2 text-right">
+                  <a 
+                    href="https://maps.google.com/?q=Jagdamba+Timber+Gumaniwala+Rishikesh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[10px] tracking-wider uppercase text-amber-200/80 hover:text-amber-100 transition-colors font-semibold flex items-center justify-end gap-1.5"
+                  >
+                    View on Google Maps ↗
+                  </a>
+                </div>
 
                 {/* Areas We Serve Local SEO tags */}
                 <div className="mt-8 pt-6 border-t border-white/5">
