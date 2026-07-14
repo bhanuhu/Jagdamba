@@ -149,7 +149,7 @@ export default function MaterialStudio() {
       id: 'jagdamba-doors',
       name: 'Jagdamba Doors',
       category: 'doors',
-      image: '/images/jagdamba-doors-timber.jpg',
+      image: '/images/jagdamba-doors-luxury.png',
     },
   ];
 
