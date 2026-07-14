@@ -69,20 +69,22 @@ export default function Brands() {
       name: 'Mazix', 
       type: 'Premium Cabinet Hinges',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M4 4h16v16H4zM9 9h6v6H9zM4 12h5M15 12h5" />
-        </svg>
+        <img 
+          src="/images/mazix-logo.jpg" 
+          alt="Mazix" 
+          className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     },
     { 
       name: 'HEPO', 
       type: 'Silent Drawer Fittings',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9" />
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
-        </svg>
+        <img 
+          src="/images/hepo-logo.png" 
+          alt="HEPO" 
+          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     }
   ];
