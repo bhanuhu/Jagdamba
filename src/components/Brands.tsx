@@ -47,10 +47,11 @@ export default function Brands() {
       name: 'Black Cobra', 
       type: 'Decorative Laminates',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-1.12-2.5-2.5-2.5S6 10.62 6 12s1.12 2.5 2.5 2.5z" />
-          <path d="M16 12c0 3.31-2.69 6-6 6H4a2 2 0 01-2-2V4a2 2 0 012-2h12c3.31 0 6 2.69 6 6 0 1.91-1.07 3.57-2.66 4.41L16 12z" />
-        </svg>
+        <img 
+          src="/images/black-cobra-logo.jpg" 
+          alt="Black Cobra" 
+          className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     },
     { 
