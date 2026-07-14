@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { Send, ShieldCheck, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass, Coins, Users } from 'lucide-react';

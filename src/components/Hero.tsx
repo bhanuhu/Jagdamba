@@ -1,6 +1,9 @@
+"use client";
+
 import { useRef, useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useScrollProgress } from '../hooks/useScrollProgress';
+import Image from 'next/image';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -108,14 +111,12 @@ export default function Hero() {
           className="absolute inset-0 z-20 wood-grain flex items-center justify-center pointer-events-none"
           style={{ opacity: titleOpacity }}
         >
-          <div 
-            className="absolute inset-0 opacity-70"
-            style={{
-              backgroundImage: 'url(/images/luxury-hero-bg.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'brightness(0.35) contrast(1.15) saturate(0.7)'
-            }}
+          <Image 
+            src="/images/luxury-hero-bg.jpg"
+            alt="Jagdamba Wood Grain"
+            fill
+            priority
+            className="object-cover opacity-70 filter brightness-[0.35] contrast-[1.15] saturate-[0.7] pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
           
@@ -141,14 +142,11 @@ export default function Hero() {
             transition: 'transform 0.1s ease-out'
           }}
         >
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'url(/images/showroom-facade-jagdamba.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'brightness(0.65) contrast(1.1)'
-            }}
+          <Image 
+            src="/images/showroom-facade-jagdamba.jpg"
+            alt="Jagdamba Showroom Facade"
+            fill
+            className="object-cover filter brightness-[0.65] contrast-[1.1] pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/90" />
         </div>

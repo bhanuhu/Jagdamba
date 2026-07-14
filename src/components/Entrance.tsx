@@ -1,5 +1,8 @@
+"use client";
+
 import { useRef } from 'react';
 import { useScrollProgress } from '../hooks/useScrollProgress';
+import Image from 'next/image';
 
 export default function Entrance() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,13 +54,17 @@ export default function Entrance() {
           <div 
             className="absolute inset-0 transition-all duration-100 ease-out"
             style={{
-              backgroundImage: 'url(/images/livingroom-luxury-lounge.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
               transform: `scale(${roomScale})`,
               opacity: roomOpacity,
             }}
-          />
+          >
+            <Image 
+              src="/images/livingroom-luxury-lounge.jpg"
+              alt="Living Room Lounge"
+              fill
+              className="object-cover pointer-events-none"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 via-transparent to-black/50" />
 
           {/* 3D Swinging Door Panel */}
@@ -70,14 +77,14 @@ export default function Entrance() {
             }}
           >
             {/* Wooden Door Surface */}
-            <div 
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'url(/images/jagdamba-doors-timber.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            />
+            <div className="absolute inset-0">
+              <Image 
+                src="/images/jagdamba-doors-timber.jpg"
+                alt="Jagdamba Wood Entry"
+                fill
+                className="object-cover pointer-events-none"
+              />
+            </div>
             {/* Dark Veneer overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-black/70" />
             
