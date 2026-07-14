@@ -5,6 +5,7 @@ import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown, Award, CheckCircle
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [project, setProject] = useState('residential');
   
@@ -13,10 +14,11 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message) return;
+    if (!name || !email || !phone || !message) return;
     setSubmitted(true);
     setName('');
     setEmail('');
+    setPhone('');
     setMessage('');
     setTimeout(() => setSubmitted(false), 4000);
   };
@@ -309,6 +311,22 @@ export default function Contact() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="alex@example.com"
+                      className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors"
+                    />
+                  </div>
+
+                  {/* Phone field */}
+                  <div className="space-y-2">
+                    <label htmlFor="form-phone" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold">
+                      Mobile Number
+                    </label>
+                    <input
+                      id="form-phone"
+                      type="tel"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="E.g. 9412678698"
                       className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors"
                     />
                   </div>
