@@ -8,7 +8,6 @@ export default function Contact() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [project, setProject] = useState('residential');
-  const [file, setFile] = useState<File | null>(null);
   
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -32,9 +31,6 @@ export default function Contact() {
       if (phone.trim()) formData.append("phone", phone);
       formData.append("project", project);
       if (message.trim()) formData.append("message", message);
-      if (file) {
-        formData.append("attachment", file);
-      }
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -48,7 +44,6 @@ export default function Contact() {
         setEmail('');
         setPhone('');
         setMessage('');
-        setFile(null);
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert("Submission failed: " + (result.message || "Unknown error"));
@@ -398,21 +393,6 @@ export default function Contact() {
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Describe your design vision, timelines, and material requirements..."
                       className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors resize-none"
-                    />
-                  </div>
-
-                  {/* Reference design image upload */}
-                  <div className="space-y-2">
-                    <label htmlFor="form-file" className="text-[9px] tracking-[0.2em] uppercase text-white/40 font-semibold flex items-center justify-between">
-                      <span>Reference Image (Optional)</span>
-                      {file && <span className="text-[8px] text-amber-200 capitalize font-sans">{file.name}</span>}
-                    </label>
-                    <input
-                      id="form-file"
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
-                      className="w-full bg-neutral-900/60 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-white/20 focus:outline-none focus:border-amber-200/60 transition-colors file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-[10px] file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 file:cursor-pointer"
                     />
                   </div>
 
