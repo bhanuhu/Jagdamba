@@ -151,6 +151,23 @@ export default function ProductsPage() {
                 ))}
               </div>
 
+              {activeCat.id === 'doors' && (
+                <div className="p-6 rounded-2xl border border-amber-400/20 bg-amber-400/5 flex items-center justify-between mt-4">
+                  <div>
+                    <h4 className="text-sm font-medium text-white mb-1 font-serif-display">Jagdamba Doors Catalogue</h4>
+                    <p className="text-[10px] text-white/50 font-light font-sans">Explore dimensions, material options, WPC spec sheets & designs.</p>
+                  </div>
+                  <a 
+                    href="/jd doors.pdf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-black text-[10px] uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 shadow-[0_0_20px_rgba(251,191,36,0.15)] whitespace-nowrap shrink-0"
+                  >
+                    <span>📄</span> View Catalogue
+                  </a>
+                </div>
+              )}
+
               {/* Call-to-action */}
               <div className="p-6 rounded-2xl border border-dashed border-amber-200/10 bg-amber-200/2 flex items-center justify-between mt-8">
                 <div>
