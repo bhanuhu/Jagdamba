@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Entrance from './components/Entrance';
 import Brands from './components/Brands';
 import LivingRoom from './components/LivingRoom';
 import Kitchen from './components/Kitchen';
@@ -26,9 +25,6 @@ function App() {
 
       {/* Hero scroll section */}
       <Hero />
-
-      {/* Entrance Y-rotation door */}
-      <Entrance />
 
       {/* Authorized brand trust showcase */}
       <Brands />
