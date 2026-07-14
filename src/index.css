@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif-display: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #faf4e8;
+  --color-gold-200: #f3e5ca;
+  --color-gold-300: #ebd19f;
+  --color-gold-400: #dfb86e;
+  --color-gold-500: #d09c43;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  *, html, body, a, button, select, input, textarea, [role="button"], .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(253, 230, 138, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(253, 230, 138, 0.3);
+}
+
+/* Sunbeams */
+.sunbeam {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(253, 230, 138, 0.05) 0%, rgba(253, 230, 138, 0.01) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Dust particles animation */
+@keyframes float-dust {
+  0% {
+    transform: translateY(105vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-5vh) translateX(var(--dx, 20px));
+    opacity: 0;
+  }
+}
+
+.dust {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  background: rgba(253, 230, 138, 0.3);
+  border-radius: 50%;
+  animation: float-dust var(--dur, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  pointer-events: none;
+}
+
+/* Smooth Engraving text */
+.engraved {
+  background: linear-gradient(to bottom, #fffefc 20%, #fde68a 50%, #8a5a2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+  letter-spacing: 0.15em;
+  font-weight: 200;
+}
+
+/* Pin badges & glow widgets */
+.pin-badge {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 3D and Perspective Transforms */
+.door-panel {
+  transform-style: preserve-3d;
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom interactive transition details */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s, box-shadow 0.2s;
+}
+
+.wood-grain {
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* TV unit indicator point glowing pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(253, 230, 138, 0.4), 0 0 20px rgba(253, 230, 138, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(253, 230, 138, 0.8), 0 0 45px rgba(253, 230, 138, 0.4);
+  }
+}
+.glow-dot {
+  animation: glow-pulse 2s infinite;
+}
