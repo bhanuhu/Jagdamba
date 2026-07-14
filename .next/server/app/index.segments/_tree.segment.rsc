@@ -1,4 +1,5 @@
 :HL["/_next/static/chunks/2ydmls5chuo4y.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap","style"]
 :HL["/favicon.png","image"]
 :HL["/images/century-ply-logo.png","image"]
 :HL["/images/action-tesa-logo.png","image"]
@@ -8,4 +9,4 @@
 :HL["/images/mazix-logo.jpg","image"]
 :HL["/images/hepo-logo.png","image"]
 :HL["/images/study-workspace-cabinet.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"5LY57EtAwUc9KyrK_Etuh"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"T9Fd5davACyhsmnxS8tBw"}
