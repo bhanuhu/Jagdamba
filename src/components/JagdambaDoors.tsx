@@ -313,11 +313,13 @@ export default function JagdambaDoors() {
               Explore our complete range of door designs, finishes &amp; sizes.
             </p>
             <a
-              href="#contact"
+              href="/jd doors.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 px-7 py-3 rounded-full bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition-all duration-300 shadow-[0_0_30px_rgba(251,191,36,0.25)] hover:shadow-[0_0_40px_rgba(251,191,36,0.45)] whitespace-nowrap"
             >
               <span>📄</span>
-              Request Full Catalogue
+              View Catalogue
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
             </a>
           </div>
