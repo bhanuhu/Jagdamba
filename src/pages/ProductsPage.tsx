@@ -60,7 +60,6 @@ export default function ProductsPage() {
       icon: <Coins className="w-4 h-4" />,
       desc: 'High-density layered veneer plywood. Absolute core void minimization ensures maximum weight loading and structural integrity.',
       brands: [
-        { name: 'Century Ply', specs: 'Premium Club Prime, BWR, and BWP marine-grade plywood.' },
         { name: 'Assam Plywood', specs: 'High-density local hardwood ply with borer-free certifications.' }
       ],
       features: ['Boiling Water Proof (BWP) grades', 'Moisture Resistant (MR) options', 'Core-void free veneers', 'High load-bearing index']
