@@ -9,18 +9,49 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [project, setProject] = useState('residential');
   
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name || !email || !phone || !message) return;
-    setSubmitted(true);
-    setName('');
-    setEmail('');
-    setPhone('');
-    setMessage('');
-    setTimeout(() => setSubmitted(false), 4000);
+    
+    setSubmitting(true);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "19d58aba-5ee7-4e0b-b281-9081cc39858b",
+          name: name,
+          email: email,
+          phone: phone,
+          project: project,
+          message: message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Submission failed: " + (result.message || "Unknown error"));
+      }
+    } catch (error) {
+      alert("Submission error. Please verify your internet connection.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const faqs = [
@@ -368,9 +399,10 @@ export default function Contact() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-amber-200 hover:bg-amber-100 text-black font-semibold text-xs tracking-wider uppercase transition-colors shadow-lg shadow-amber-200/10 cursor-pointer"
+                    disabled={submitting}
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-amber-200 hover:bg-amber-100 text-black font-semibold text-xs tracking-wider uppercase transition-colors shadow-lg shadow-amber-200/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4" /> Request Consultation
+                    <Send className="w-4 h-4" /> {submitting ? "Sending..." : "Request Consultation"}
                   </button>
 
                 </form>
