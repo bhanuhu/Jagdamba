@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Layers, Box, Compass, Shield, Coins, FileText, ArrowRight } from 'lucide-react';
+import { Layers, Box, Compass, Shield, Coins, FileText } from 'lucide-react';
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('hdmr');
@@ -141,13 +141,12 @@ export default function ProductsPage() {
                 {activeCat.brands.map((b, idx) => (
                   <div 
                     key={idx}
-                    className="p-6 rounded-2xl border border-white/5 bg-white/2 hover:border-amber-200/20 hover:bg-white/5 transition-all duration-300 flex justify-between items-center group cursor-default"
+                    className="p-6 rounded-2xl border border-white/5 bg-white/2 hover:border-amber-200/20 hover:bg-white/5 transition-all duration-300 flex flex-col justify-center group cursor-default"
                   >
                     <div className="space-y-1">
                       <div className="text-sm font-semibold text-white group-hover:text-amber-200 transition-colors font-serif-display">{b.name}</div>
                       <div className="text-xs text-white/50 font-light font-sans">{b.specs}</div>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-amber-200 group-hover:translate-x-1 transition-all" />
                   </div>
                 ))}
               </div>
