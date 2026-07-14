@@ -38,10 +38,16 @@ export default function Gallery() {
       image: '/images/master-bedroom-design.jpg',
     },
     {
-      id: 'gal-4',
+      id: 'gal-4a',
       title: 'Luxury Walk-in Glass Wardrobe',
       category: 'wardrobe',
-      image: '/images/wardrobe-interior-design.jpg',
+      image: '/images/wardrobe-luxury-glass.png',
+    },
+    {
+      id: 'gal-4b',
+      title: 'Modern Grey Sliding Wardrobe',
+      category: 'wardrobe',
+      image: '/images/wardrobe-sliding-grey.png',
     },
     {
       id: 'gal-5',
