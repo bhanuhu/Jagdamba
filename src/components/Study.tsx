@@ -26,7 +26,7 @@ export default function Study() {
           {/* Left: Study Room Image */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/5 shadow-2xl bg-neutral-900">
             <img
-              src="https://images.unsplash.com/photo-1709011399070-90601cac77c9?auto=format&fit=crop&w=1800&q=85"
+              src="/images/study-workspace-cabinet.jpg"
               alt="Study Room Layout"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />

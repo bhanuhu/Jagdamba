@@ -51,7 +51,7 @@ export default function Entrance() {
           <div 
             className="absolute inset-0 transition-all duration-100 ease-out"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1663811397207-418a92396ad5?auto=format&fit=crop&w=1800&q=85)',
+              backgroundImage: 'url(/images/livingroom-luxury-lounge.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               transform: `scale(${roomScale})`,
@@ -73,7 +73,7 @@ export default function Entrance() {
             <div 
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1652185396416-77aeccd1dce0?auto=format&fit=crop&w=1800&q=85)',
+                backgroundImage: 'url(/images/jagdamba-doors-timber.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}

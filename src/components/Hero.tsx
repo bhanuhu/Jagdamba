@@ -111,7 +111,7 @@ export default function Hero() {
           <div 
             className="absolute inset-0 opacity-70"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1502639625928-9e0198ae7dfb?auto=format&fit=crop&w=1200&q=85)',
+              backgroundImage: 'url(/images/luxury-hero-bg.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'brightness(0.35) contrast(1.15) saturate(0.7)'
@@ -144,7 +144,7 @@ export default function Hero() {
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1703953606885-0bbc4fd40911?auto=format&fit=crop&w=1800&q=85)',
+              backgroundImage: 'url(/images/showroom-facade-jagdamba.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'brightness(0.65) contrast(1.1)'

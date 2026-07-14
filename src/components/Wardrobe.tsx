@@ -61,7 +61,7 @@ export default function Wardrobe() {
               <div 
                 className="absolute inset-0 w-full h-full"
                 style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1703922994719-fb2da3bfa977?auto=format&fit=crop&w=1800&q=85)',
+                  backgroundImage: 'url(/images/wardrobe-interior-design.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   filter: 'brightness(0.5)'
@@ -73,7 +73,7 @@ export default function Wardrobe() {
                 <div 
                   className="w-full h-full"
                   style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1598520335346-c7efc4525052?auto=format&fit=crop&w=1800&q=85)',
+                    backgroundImage: 'url(/images/wardrobe-exterior-veneer.jpg)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     filter: 'brightness(0.85) contrast(1.05)'
@@ -94,7 +94,7 @@ export default function Wardrobe() {
                 <div 
                   className="w-full h-full"
                   style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1598520335346-c7efc4525052?auto=format&fit=crop&w=1800&q=85)',
+                    backgroundImage: 'url(/images/wardrobe-exterior-veneer.jpg)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     filter: 'brightness(0.95)'

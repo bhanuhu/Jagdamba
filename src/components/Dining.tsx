@@ -25,7 +25,7 @@ export default function Dining() {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1621963325509-9a1959c2343b?auto=format&fit=crop&w=1800&q=85)',
+            backgroundImage: 'url(/images/dining-parallax-view.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.55)'

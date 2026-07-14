@@ -89,7 +89,7 @@ export default function Bedroom() {
           }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1656914871811-148cfdbb6ef4?auto=format&fit=crop&w=1800&q=85" 
+            src="/images/master-bedroom-design.jpg" 
             alt="Master Bedroom" 
             className="w-full h-full object-cover"
           />
@@ -115,7 +115,7 @@ export default function Bedroom() {
             <div 
               className="absolute inset-0 transition-all duration-100 ease-out"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1616108738832-504f7b6addf2?auto=format&fit=crop&w=1200&q=85)',
+                backgroundImage: 'url(/images/bedroom-material-card.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transform: `scale(${roomScale})`,
@@ -135,7 +135,7 @@ export default function Bedroom() {
             >
               {/* Door Surface Image */}
               <img 
-                src="https://images.unsplash.com/photo-1652359265331-324a72cd9732?auto=format&fit=crop&w=1800&q=85" 
+                src="/images/doors-bedroom-inside.jpg" 
                 alt="Jagdamba Door Veneer" 
                 className="w-full h-full object-cover"
               />

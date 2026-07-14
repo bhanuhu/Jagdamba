@@ -74,7 +74,7 @@ export default function Configurator() {
               
               {/* Preview Image */}
               <img
-                src="https://images.unsplash.com/photo-1650090974911-94b90ea2a833?auto=format&fit=crop&w=1800&q=85"
+                src="/images/configurator-base-room.jpg"
                 alt="Room Customization Preview"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"
                 style={{ filter: combinedFilter }}

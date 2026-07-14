@@ -124,7 +124,7 @@ export default function AboutPage() {
           </div>
           <div className="rounded-2xl overflow-hidden border border-white/5 bg-neutral-900 aspect-video shadow-2xl relative">
             <img 
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85" 
+              src="/images/about-timber-workshop.jpg" 
               alt="Timber selection"
               className="w-full h-full object-cover grayscale opacity-60 hover:grayscale-0 transition-all duration-700"
             />
