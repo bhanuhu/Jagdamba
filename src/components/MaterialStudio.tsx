@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import type { MouseEvent } from 'react';
-import { ArrowRight } from 'lucide-react';
 
 interface MaterialItem {
   id: string;
@@ -77,11 +76,10 @@ function TiltCard({ item }: { item: MaterialItem }) {
       </div>
 
       {/* Card Info footer */}
-      <div className="mt-4 flex items-center justify-between px-1">
+      <div className="mt-4 px-1">
         <div className="font-serif-display text-lg text-white font-light group-hover:text-amber-200 transition-colors">
           {item.name}
         </div>
-        <ArrowRight className="w-4 h-4 text-amber-200/60 group-hover:translate-x-1 transition-transform" />
       </div>
     </div>
   );
