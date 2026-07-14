@@ -61,8 +61,8 @@ function HomePage() {
       <LivingRoom />
       <Kitchen />
       <Dining />
-      <JagdambaDoors />
       <Bedroom />
+      <JagdambaDoors />
       <Wardrobe />
       <Study />
       <MaterialStudio />
@@ -79,7 +79,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <main className="relative min-h-screen bg-black text-white antialiased selection:bg-amber-300/30 selection:text-amber-100 flex flex-col justify-between">
-          
+
           {/* Custom nail and hammer active cursor */}
           <CustomCursor />
 

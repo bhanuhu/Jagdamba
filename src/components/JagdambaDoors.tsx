@@ -1,5 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
-import { useScrollProgress } from '../hooks/useScrollProgress';
+import { useState, useCallback, useRef } from 'react';
 
 // Door catalogue data
 const DOORS = [
@@ -109,51 +108,12 @@ const PRICE_COLORS: Record<string, string> = {
 type Door = typeof DOORS[0];
 
 export default function JagdambaDoors() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useScrollProgress(containerRef);
   const sliderRef = useRef<HTMLDivElement>(null);
-
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedDoor, setSelectedDoor] = useState<Door | null>(null);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [clickedCard, setClickedCard] = useState<number | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
-
-  // Scroll-based cinematic animation values
-  // Door swing opens: 0.05 → 0.35
-  let doorRotation = 0;
-  if (scrollProgress >= 0.05 && scrollProgress <= 0.35) {
-    doorRotation = -85 * ((scrollProgress - 0.05) / 0.3);
-  } else if (scrollProgress > 0.35) {
-    doorRotation = -85;
-  }
-
-  // Hero overlay fades out as door opens
-  let heroTextOpacity = 1;
-  if (scrollProgress >= 0.1 && scrollProgress <= 0.4) {
-    heroTextOpacity = 1 - (scrollProgress - 0.1) / 0.3;
-  } else if (scrollProgress > 0.4) {
-    heroTextOpacity = 0;
-  }
-
-  // Bedroom image behind door fades in as door opens
-  let bedroomOpacity = 0;
-  if (scrollProgress >= 0.05 && scrollProgress <= 0.4) {
-    bedroomOpacity = (scrollProgress - 0.05) / 0.35;
-  } else if (scrollProgress > 0.4) {
-    bedroomOpacity = 1;
-  }
-
-  // Gallery section fades in after door is fully open
-  let galleryOpacity = 0;
-  let galleryTranslateY = 60;
-  if (scrollProgress >= 0.45 && scrollProgress <= 0.65) {
-    galleryOpacity = (scrollProgress - 0.45) / 0.2;
-    galleryTranslateY = 60 - galleryOpacity * 60;
-  } else if (scrollProgress > 0.65) {
-    galleryOpacity = 1;
-    galleryTranslateY = 0;
-  }
 
   const handleCardMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -182,173 +142,8 @@ export default function JagdambaDoors() {
 
   return (
     <>
-      {/* ─── CINEMATIC HERO ─────────────────────────────────── */}
-      <section
-        ref={containerRef}
-        id="jagdamba-doors"
-        className="relative h-[300vh] bg-black"
-      >
-        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-
-          {/* Ambient dark gradient backdrop */}
-          <div className="absolute inset-0 bg-gradient-radial from-amber-950/20 via-black to-black pointer-events-none" />
-
-          {/* Spotlight beam from above */}
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-[80vh] pointer-events-none"
-            style={{
-              background: 'conic-gradient(from 180deg at 50% 0%, transparent 75deg, rgba(251,191,36,0.08) 90deg, rgba(251,191,36,0.15) 100deg, rgba(251,191,36,0.08) 110deg, transparent 135deg)',
-              opacity: Math.max(0, 1 - scrollProgress * 2)
-            }}
-          />
-
-          {/* Background bedroom image (revealed as door opens) */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ opacity: bedroomOpacity, transition: 'opacity 0.05s linear' }}
-          >
-            <img
-              src="/images/doors-bedroom-inside.jpg"
-              alt="Luxury Bedroom"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
-          </div>
-
-          {/* ── The Door ── */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-
-            {/* Hero text — fades out as door opens */}
-            <div
-              className="absolute top-[15%] left-1/2 -translate-x-1/2 text-center w-full px-4 z-20 pointer-events-none"
-              style={{ opacity: heroTextOpacity }}
-            >
-              <p className="text-amber-400/60 tracking-[0.4em] text-xs uppercase font-light mb-4">
-                Jagdamba Exclusive
-              </p>
-              <h2 className="text-5xl md:text-7xl font-thin text-white leading-none tracking-tight mb-5">
-                Crafted by<br />
-                <span className="font-semibold bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">
-                  Jagdamba Doors
-                </span>
-              </h2>
-              <p className="text-white/50 text-lg font-light max-w-md mx-auto mb-8">
-                Premium doors handcrafted to elevate every space.
-              </p>
-              <p className="text-amber-400/40 text-sm tracking-widest animate-pulse">
-                ↓ Scroll to open
-              </p>
-            </div>
-
-            {/* 3D Door with perspective */}
-            <div
-              className="relative flex items-center justify-center"
-              style={{ perspective: '1200px', perspectiveOrigin: '30% 50%' }}
-            >
-              {/* Door frame */}
-              <div
-                className="relative"
-                style={{ width: '280px', height: '480px' }}
-              >
-                {/* Door frame surround */}
-                <div
-                  className="absolute inset-0 rounded-t-xl border-[10px] border-amber-900/60 bg-gradient-to-b from-amber-950/30 to-stone-950/50 shadow-2xl"
-                  style={{ borderRadius: '12px 12px 2px 2px' }}
-                />
-
-                {/* The swinging door leaf */}
-                <div
-                  className="absolute inset-[10px] origin-left"
-                  style={{
-                    transformStyle: 'preserve-3d',
-                    transform: `rotateY(${doorRotation}deg)`,
-                    transition: 'transform 0.08s ease-out',
-                    borderRadius: '8px 8px 2px 2px',
-                    overflow: 'hidden'
-                  }}
-                >
-                  {/* Door face */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-amber-900 via-amber-950 to-stone-950 rounded-t-lg overflow-hidden shadow-[inset_0_0_80px_rgba(0,0,0,0.6)]">
-                    <img
-                      src="/images/jagdamba-doors-timber.jpg"
-                      alt="Jagdamba Premium Door"
-                      className="w-full h-full object-cover mix-blend-multiply opacity-80"
-                    />
-
-                    {/* Wood grain overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-900/40 via-transparent to-amber-900/20" />
-
-                    {/* Door panel carved lines */}
-                    <div className="absolute inset-6 border border-amber-700/30 rounded-sm" />
-                    <div className="absolute inset-10 border border-amber-700/20 rounded-sm" />
-
-                    {/* Top panel */}
-                    <div className="absolute top-14 left-10 right-10 h-[30%] border border-amber-700/25 rounded-sm bg-amber-950/20" />
-                    {/* Bottom panel */}
-                    <div className="absolute bottom-14 left-10 right-10 h-[35%] border border-amber-700/25 rounded-sm bg-amber-950/20" />
-
-                    {/* Door handle */}
-                    <div
-                      className="absolute right-5 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1 transition-all duration-300"
-                      style={{
-                        filter: doorRotation < -30 ? 'drop-shadow(0 0 8px rgba(251,191,36,0.6))' : 'none'
-                      }}
-                    >
-                      <div className="w-2 h-10 rounded-full bg-gradient-to-b from-amber-400 via-yellow-300 to-amber-500 shadow-lg" />
-                      <div className="w-3 h-3 rounded-full bg-amber-300 shadow-md" />
-                    </div>
-
-                    {/* Light reflection sweep */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `linear-gradient(${105 + doorRotation * 0.3}deg, transparent 30%, rgba(255,235,180,0.12) 50%, transparent 70%)`
-                      }}
-                    />
-                  </div>
-
-                  {/* Door back face (visible when open) */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-b from-stone-900 to-stone-950 rounded-t-lg"
-                    style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
-                  />
-
-                  {/* Door side edge (depth illusion) */}
-                  <div
-                    className="absolute top-0 right-0 bottom-0 w-4 bg-gradient-to-r from-amber-800 to-amber-950"
-                    style={{ transform: 'rotateY(90deg) translateZ(-8px)', transformOrigin: 'right center' }}
-                  />
-                </div>
-
-                {/* Door shadow on floor */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.6) 0%, transparent 70%)',
-                    transform: `scaleX(${1 + Math.abs(doorRotation) * 0.015}) translateY(4px)`,
-                    transformOrigin: 'bottom center'
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Post-open overlay text */}
-            {scrollProgress > 0.4 && (
-              <div
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center pointer-events-none"
-                style={{ opacity: Math.min(1, (scrollProgress - 0.4) / 0.15) }}
-              >
-                <p className="text-white/70 text-sm tracking-widest uppercase">
-                  Continue to Explore the Collection ↓
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ─── COLLECTION & GALLERY ────────────────────────────── */}
-      <section className="relative bg-neutral-950 py-24 overflow-hidden">
+      <section id="jagdamba-doors" className="relative bg-neutral-950 pt-12 overflow-hidden">
 
         {/* Ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-amber-500/5 blur-3xl rounded-full pointer-events-none" />
@@ -356,10 +151,7 @@ export default function JagdambaDoors() {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Section heading */}
-          <div
-            className="text-center mb-16"
-            style={{ opacity: galleryOpacity, transform: `translateY(${galleryTranslateY}px)` }}
-          >
+          <div className="text-center mb-8">
             <p className="text-amber-400/60 tracking-[0.4em] text-xs uppercase font-light mb-4">
               The Collection
             </p>
@@ -377,11 +169,10 @@ export default function JagdambaDoors() {
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
-                className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${
-                  activeFilter === f.id
-                    ? 'bg-amber-400 text-black border-amber-400 shadow-[0_0_20px_rgba(251,191,36,0.3)]'
-                    : 'bg-white/5 text-white/60 border-white/10 hover:border-amber-400/40 hover:text-white'
-                }`}
+                className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${activeFilter === f.id
+                  ? 'bg-amber-400 text-black border-amber-400 shadow-[0_0_20px_rgba(251,191,36,0.3)]'
+                  : 'bg-white/5 text-white/60 border-white/10 hover:border-amber-400/40 hover:text-white'
+                  }`}
               >
                 {f.label}
               </button>
@@ -534,12 +325,10 @@ export default function JagdambaDoors() {
                 {[
                   'Custom Sizes Available',
                   'Designer Finish Options',
-                  'Premium Hardware Included',
+                  'Premium Hardware Available',
                   'Moisture Resistant Options',
                   'Expert Installation Guidance',
                   'In-House Brand (No Middleman)',
-                  'CNC Panel Customization',
-                  'Lifetime Craftsmanship Warranty'
                 ].map((feature, i) => (
                   <div
                     key={feature}
