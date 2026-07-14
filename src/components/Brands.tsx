@@ -4,9 +4,11 @@ export default function Brands() {
       name: 'Century Ply', 
       type: 'Premium Plywood & Veneers',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M12 2L3 9h18L12 2zM3 9v11a1 1 0 001 1h16a1 1 0 001-1V9M12 9v12M8 14h8" />
-        </svg>
+        <img 
+          src="/images/century-ply-logo.png" 
+          alt="Century Ply" 
+          className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter grayscale brightness-200 contrast-125 transform group-hover:scale-105" 
+        />
       )
     },
     { 
