@@ -41,10 +41,10 @@ const DOORS = [
     finish: 'Mica Door',
     material: 'Solid Flush Core + High-Pressure Mica Laminate',
     bestUse: 'Main Entry, Drawing Room, Office',
-    features: ['Heat Resistant', 'Durable Surface', 'Premium Texture'],
+    features: ['Premium Laminates', 'Elegant Finish', 'Superior Durability', 'Modern Designs', 'Textured Surfaces', 'Designer Laminates'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft', '8×3.5 ft', 'Custom'],
     colors: ['Teak Wood', 'Rosewood', 'Wenge', 'Light Maple'],
-    description: 'Mica laminate doors bond high-pressure decorative sheets over a solid engineered core, giving you a rich wood-look finish that is heat resistant, scratch proof, and easy to maintain. A timeless and cost-effective choice for any space.',
+    description: 'Mica Doors are crafted by bonding premium decorative laminates (mica) onto a solid 30 mm engineered wooden door, offering a durable and elegant finish. Resistant to everyday scratches, stains, and wear, they are easy to maintain and available in a wide range of wood grains, solid colours, matte, glossy, and textured finishes.',
     priceTag: 'Standard'
   },
   {
@@ -55,10 +55,10 @@ const DOORS = [
     finish: 'Mica Door',
     material: 'Engineered Wood Core + Matte Mica',
     bestUse: 'Bedroom, Study, Commercial Space',
-    features: ['Uniform Matte Surface', 'Scratch Resistant', 'Cost Effective'],
+    features: ['Premium Laminates', 'Elegant Finish', 'Superior Durability', 'Modern Designs', 'Textured Surfaces', 'Designer Laminates'],
     sizes: ['7×3 ft', '7×3.5 ft', '8×3 ft'],
     colors: ['Midnight Black', 'Charcoal Grey', 'Stone Beige'],
-    description: 'Mica laminate doors bond high-pressure decorative sheets over a solid engineered core, giving you a rich wood-look finish that is heat resistant, scratch proof, and easy to maintain. A timeless and cost-effective choice for any space.',
+    description: 'Mica Doors are crafted by bonding premium decorative laminates (mica) onto a solid 30 mm engineered wooden door, offering a durable and elegant finish. Resistant to everyday scratches, stains, and wear, they are easy to maintain and available in a wide range of wood grains, solid colours, matte, glossy, and textured finishes.',
     priceTag: 'Standard'
   },
   // ── WPC ───────────────────────────────────────────
