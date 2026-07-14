@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass } from 'lucide-react';
+import { Send, ShieldCheck, Mail, MapPin, Phone, ChevronDown, Award, CheckCircle, Package, Truck, Compass, Coins, Users } from 'lucide-react';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -52,28 +52,38 @@ export default function Contact() {
     },
     {
       icon: <CheckCircle className="w-5 h-5 text-amber-200" />,
-      title: "100% Genuine Materials",
-      desc: "Authorized partner channels with verified manufacturing warranties and official batch certifications."
+      title: "Genuine Products",
+      desc: "Authorized partner channels with verified manufacturer warranties and official batch certifications."
     },
     {
       icon: <Compass className="w-5 h-5 text-amber-200" />,
-      title: "Signature Doors Manufacturer",
+      title: "Jagdamba Doors Manufacturer",
       desc: "Custom sizing, engineered solid cores, and bespoke veneers designed and manufactured in our local workshop."
     },
     {
       icon: <Package className="w-5 h-5 text-amber-200" />,
-      title: "Trusted Global Brands",
-      desc: "Authorized dealer status with Century Ply, Action TESA, Virgo Laminates, Black Cobra, and HEPO fittings."
+      title: "Trusted Brands",
+      desc: "Authorized dealership status with Century Ply, Action TESA, Virgo Laminates, Black Cobra, and HEPO fittings."
     },
     {
-      icon: <MapPin className="w-5 h-5 text-amber-200" />,
-      title: "Located in Rishikesh",
-      desc: "Showroom located at Gumaniwala, Rishikesh to supply area construction sites with immediate logisitics."
+      icon: <Coins className="w-5 h-5 text-amber-200" />,
+      title: "Competitive Pricing",
+      desc: "Highly competitive sourcing prices on premium wood panels and hardware fittings."
+    },
+    {
+      icon: <Users className="w-5 h-5 text-amber-200" />,
+      title: "Expert Guidance",
+      desc: "Over 40 years of combined master woodworking and design engineering expertise to guide your project."
     },
     {
       icon: <Truck className="w-5 h-5 text-amber-200" />,
-      title: "Serving Uttarakhand",
-      desc: "Prompt logistics and direct transport networks serving Dehradun, Haridwar, Roorkee, and Tapovan."
+      title: "Fast Delivery",
+      desc: "Prompt logistics and direct transport networks delivering directly to building sites."
+    },
+    {
+      icon: <MapPin className="w-5 h-5 text-amber-200" />,
+      title: "Serving Rishikesh & Nearby",
+      desc: "Prompt supply routes serving Gumaniwala, Tapovan, Haridwar, Dehradun, and surrounding Uttarakhand zones."
     }
   ];
 
