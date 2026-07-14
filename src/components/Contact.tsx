@@ -229,7 +229,7 @@ export default function Contact() {
                 <div className="rounded-xl overflow-hidden border border-white/5 bg-neutral-900/60 aspect-video shadow-lg relative mt-6 h-48 w-full">
                   <iframe
                     title="Jagdamba Timber Works Location Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4988451151614!2d78.25531397637706!3d30.058379474917904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093e0b7bb8d30d%3A0xe5a3c2cf5b42d544!2sGumaniwala%2C%20Rishikesh%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4988451151614!2d78.25531397637706!3d30.058379474917904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093e89e26bdfbb%3A0x873197bcc38fc5d3!2sJagdamba%20Timber!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }}
