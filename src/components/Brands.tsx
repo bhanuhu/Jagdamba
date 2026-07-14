@@ -36,9 +36,11 @@ export default function Brands() {
       name: 'Saptam', 
       type: 'Luxury Flush Doors',
       logo: (
-        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-          <path d="M6 20V4a2 2 0 012-2h8a2 2 0 012 2v16M14 10h.01M4 20h16" />
-        </svg>
+        <img 
+          src="/images/saptam-logo.jpg" 
+          alt="Saptam" 
+          className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
+        />
       )
     },
     { 
