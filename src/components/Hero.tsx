@@ -120,14 +120,14 @@ export default function Hero() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
           
-          <div className="relative z-10 text-center px-6" style={{ transform: `scale(${titleScale})` }}>
-            <div className="text-[10px] md:text-xs tracking-[0.5em] text-amber-200/60 mb-8 uppercase font-medium">
+          <div className="relative z-10 text-center px-4" style={{ transform: `scale(${titleScale})` }}>
+            <div className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.25em] sm:tracking-[0.5em] text-amber-200/60 mb-8 uppercase font-medium">
               Est. Craftsmanship · Rishikesh
             </div>
-            <h1 className="font-serif-display text-6xl md:text-9xl font-light leading-[0.9] engraved">
+            <h1 className="font-serif-display text-4xl sm:text-6xl md:text-9xl font-light leading-[0.9] engraved">
               JAGDAMBA
             </h1>
-            <div className="mt-6 text-xs md:text-sm tracking-[0.35em] text-amber-200/80 uppercase font-light">
+            <div className="mt-6 text-[9px] sm:text-xs md:text-sm tracking-[0.18em] sm:tracking-[0.35em] text-amber-200/80 uppercase font-light">
               Timber Works & Plywood · Rishikesh
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Hero() {
           <div className="text-[10px] tracking-[0.5em] text-amber-200/70 mb-6 uppercase font-medium">
             A House. A Feeling. A Legacy.
           </div>
-          <h2 className="font-serif-display text-5xl md:text-8xl font-light leading-[0.95] max-w-5xl text-white">
+          <h2 className="font-serif-display text-3xl sm:text-5xl md:text-8xl font-light leading-[1.05] sm:leading-[0.95] max-w-5xl text-white">
             From Timber<br />
             <span className="italic text-amber-200/90 font-light">to Timeless</span> Interiors
           </h2>
