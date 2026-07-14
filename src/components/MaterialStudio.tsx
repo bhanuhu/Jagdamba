@@ -101,7 +101,7 @@ export default function MaterialStudio() {
       id: 'century-hdmr',
       name: 'Century HDMR',
       category: 'board',
-      image: '/images/century-hdmr-board.jpg',
+      image: '/images/century-hdmr-kitchen.png',
     },
     {
       id: 'tesa-board',
