@@ -1,42 +1,117 @@
 export default function Brands() {
   const brands = [
-    { name: 'Century Ply', type: 'Premium Plywood & Veneers' },
-    { name: 'Action TESA', type: 'HDMR & Particle Boards' },
-    { name: 'Novopan', type: 'Engineered Wood Panels' },
-    { name: 'Saptam', type: 'Luxury Flush Doors' },
-    { name: 'Black Cobra', type: 'Decorative Laminates' },
-    { name: 'Virgo Laminates', type: 'High-Gloss Sheets' },
-    { name: 'Mazix', type: 'Premium Cabinet Hinges' },
-    { name: 'HEPO', type: 'Silent Drawer Fittings' }
+    { 
+      name: 'Century Ply', 
+      type: 'Premium Plywood & Veneers',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M12 2L3 9h18L12 2zM3 9v11a1 1 0 001 1h16a1 1 0 001-1V9M12 9v12M8 14h8" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Action TESA', 
+      type: 'HDMR & Particle Boards',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7s0 6 8 10zM12 6v10M9 10h6" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Novopan', 
+      type: 'Engineered Wood Panels',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="12" height="12" rx="1" />
+          <rect x="9" y="9" width="12" height="12" rx="1" strokeDasharray="3 3" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Saptam', 
+      type: 'Luxury Flush Doors',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M6 20V4a2 2 0 012-2h8a2 2 0 012 2v16M14 10h.01M4 20h16" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Black Cobra', 
+      type: 'Decorative Laminates',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-1.12-2.5-2.5-2.5S6 10.62 6 12s1.12 2.5 2.5 2.5z" />
+          <path d="M16 12c0 3.31-2.69 6-6 6H4a2 2 0 01-2-2V4a2 2 0 012-2h12c3.31 0 6 2.69 6 6 0 1.91-1.07 3.57-2.66 4.41L16 12z" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Virgo Laminates', 
+      type: 'High-Gloss Sheets',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Mazix', 
+      type: 'Premium Cabinet Hinges',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <path d="M4 4h16v16H4zM9 9h6v6H9zM4 12h5M15 12h5" />
+        </svg>
+      )
+    },
+    { 
+      name: 'HEPO', 
+      type: 'Silent Drawer Fittings',
+      logo: (
+        <svg className="w-10 h-10 text-amber-200/40 group-hover:text-amber-200 transition-all duration-500 transform group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
+        </svg>
+      )
+    }
   ];
 
   return (
-    <section className="relative bg-neutral-950 py-20 border-t border-b border-white/5 overflow-hidden flex items-center justify-center">
+    <section className="relative bg-neutral-950 py-24 border-t border-b border-white/5 overflow-hidden flex items-center justify-center">
       {/* Decorative subtle sunbeams */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="sunbeam" style={{ left: '30%', transform: 'skewX(-15deg)' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full text-center relative z-10">
-        <div className="text-[9px] tracking-[0.4em] text-amber-200/70 uppercase mb-8 font-semibold">
+        <div className="text-[9px] tracking-[0.4em] text-amber-200/70 uppercase mb-12 font-semibold">
           Authorized Distributors & Industry Partners
         </div>
 
         {/* Responsive Brand badges grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {brands.map((brand, idx) => (
             <div
               key={idx}
-              className="group p-5 md:p-6 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/5 hover:border-amber-200/20 transition-all duration-500 flex flex-col justify-center items-center text-center shadow-lg relative overflow-hidden cursor-pointer"
+              className="group p-6 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/5 hover:border-amber-200/20 transition-all duration-500 flex flex-col justify-center items-center text-center shadow-lg relative overflow-hidden cursor-default space-y-4"
             >
               {/* Gold border shine overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-tr from-amber-200/0 via-amber-200/0 to-amber-200/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="font-serif-display text-lg md:text-xl text-white group-hover:text-amber-100 tracking-wide font-light transition-colors">
-                {brand.name}
+              {/* Vector Logo Stamp */}
+              <div className="h-12 flex items-center justify-center">
+                {brand.logo}
               </div>
-              <div className="text-[8px] md:text-[9px] text-white/40 group-hover:text-white/60 tracking-[0.15em] uppercase mt-2 font-sans font-light transition-colors">
-                {brand.type}
+
+              <div>
+                <div className="font-serif-display text-base text-white group-hover:text-amber-100 tracking-wide font-light transition-colors">
+                  {brand.name}
+                </div>
+                <div className="text-[8px] md:text-[9px] text-white/40 group-hover:text-white/60 tracking-[0.15em] uppercase mt-1.5 font-sans font-light transition-colors">
+                  {brand.type}
+                </div>
               </div>
             </div>
           ))}
