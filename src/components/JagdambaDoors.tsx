@@ -20,7 +20,7 @@ const DOORS = [
   },
   {
     id: 2,
-    name: 'Glacier White',
+    name: 'Golden Diamond',
     category: 'membrane',
     image: '/images/membrane-door-diamond.png',
     finish: 'Membrane Door',
