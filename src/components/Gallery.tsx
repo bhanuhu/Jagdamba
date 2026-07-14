@@ -26,10 +26,16 @@ export default function Gallery() {
       image: '/images/livingroom-luxury-lounge.jpg',
     },
     {
-      id: 'gal-2',
-      title: 'Contemporary Modular Kitchen',
+      id: 'gal-2a',
+      title: 'High-Gloss Black & White Kitchen',
       category: 'kitchen',
-      image: '/images/modular-kitchen-island.jpg',
+      image: '/images/kitchen-black-white.png',
+    },
+    {
+      id: 'gal-2b',
+      title: 'Modern Grey Marble Kitchen',
+      category: 'kitchen',
+      image: '/images/kitchen-marble-grey.png',
     },
     {
       id: 'gal-3',
@@ -63,9 +69,9 @@ export default function Gallery() {
     },
     {
       id: 'gal-7',
-      title: 'Stained Ash Kitchen Veneers',
+      title: 'Premium Olive Green & Grey Kitchen',
       category: 'kitchen',
-      image: '/images/projects-commercial-office.jpg',
+      image: '/images/kitchen-olive-grey.png',
     },
     {
       id: 'gal-8',
