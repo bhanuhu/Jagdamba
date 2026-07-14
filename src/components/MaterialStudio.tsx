@@ -107,7 +107,7 @@ export default function MaterialStudio() {
       id: 'tesa-board',
       name: 'Action TESA',
       category: 'board',
-      image: '/images/action-tesa-board.jpg',
+      image: '/images/action-tesa-kitchen.png',
     },
     {
       id: 'saptam-board',
