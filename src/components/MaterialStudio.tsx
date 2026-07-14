@@ -143,7 +143,7 @@ export default function MaterialStudio() {
       id: 'assam-plywood',
       name: 'Assam Plywood',
       category: 'plywood',
-      image: '/images/assam-plywood-board.jpg',
+      image: '/images/assam-plywood-wardrobe.png',
     },
     {
       id: 'jagdamba-doors',
