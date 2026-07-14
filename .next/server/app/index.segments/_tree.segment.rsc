@@ -1,5 +1,7 @@
-:HL["/_next/static/chunks/2ydmls5chuo4y.css","style"]
-:HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap","style"]
+:HL["/_next/static/chunks/3c5cu0f8bgo3g.css","style"]
+:HL["/_next/static/media/01e4147cff8141ee-s.p.3huc2loe0ie8a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8bd76523131fa0fc-s.p.1pvupmngxrt5z.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/favicon.png","image"]
 :HL["/images/century-ply-logo.png","image"]
 :HL["/images/action-tesa-logo.png","image"]
@@ -9,4 +11,4 @@
 :HL["/images/mazix-logo.jpg","image"]
 :HL["/images/hepo-logo.png","image"]
 :HL["/images/study-workspace-cabinet.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"T9Fd5davACyhsmnxS8tBw"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"SK5V6Vqh88AKXiW7X8IMN"}
