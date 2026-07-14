@@ -90,29 +90,13 @@ const DOORS = [
     description: 'Premium WPC door with a tactile wood-grain texture and fire-retardant core. Built for high-moisture and heavy-use areas where quality cannot be compromised.',
     priceTag: 'Premium'
   },
-  // ── CUSTOM ────────────────────────────────────────
-  {
-    id: 7,
-    name: 'Bespoke Arc',
-    category: 'custom',
-    image: '/images/jagdamba-door-designer.jpg',
-    finish: 'Custom Design Door',
-    material: 'Client-Specified Core + Finish',
-    bestUse: 'Villa Entry, Living Room, Statement Spaces',
-    features: ['CNC Panel Carving', 'Any Finish Possible', 'Unique Every Time'],
-    sizes: ['Any Size — Fully Custom'],
-    colors: ['Your Choice', 'Champagne Gold Inlay', 'Ivory + Walnut Combo'],
-    description: 'A true one-of-a-kind. You decide the size, finish, color, and panel design. Our craftsmen bring your vision to life with CNC precision and handcrafted detailing.',
-    priceTag: 'Bespoke'
-  }
 ];
 
 const FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'membrane', label: 'Membrane' },
   { id: 'mica', label: 'Mica' },
-  { id: 'wpc', label: 'WPC' },
-  { id: 'custom', label: 'Custom' }
+  { id: 'wpc', label: 'WPC' }
 ];
 
 const PRICE_COLORS: Record<string, string> = {
