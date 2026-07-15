@@ -28,7 +28,7 @@ class AmbientSynth {
     if (typeof window === 'undefined') return;
     if (this.nailAudio) return;
     try {
-      this.nailAudio = new Audio('/nail.mp3');
+      this.nailAudio = new Audio('/nail.mp3?v=2');
       this.nailAudio.load();
     } catch (err) {
       console.warn('Preloading nail.mp3 failed:', err);
@@ -120,7 +120,7 @@ class AmbientSynth {
   public playHammerHit() {
     try {
       if (!this.nailAudio) {
-        this.nailAudio = new Audio('/nail.mp3');
+        this.nailAudio = new Audio('/nail.mp3?v=2');
       }
       this.nailAudio.currentTime = 0;
       this.nailAudio.volume = 0.5;
