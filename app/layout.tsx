@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Navbar from '../src/components/Navbar';
 import Footer from '../src/components/Footer';
-import CustomCursor from '../src/components/CustomCursor';
-import FloatingWhatsApp from '../src/components/FloatingWhatsApp';
 import '../src/index.css';
+
+const CustomCursor = dynamic(() => import('../src/components/CustomCursor'));
+const FloatingWhatsApp = dynamic(() => import('../src/components/FloatingWhatsApp'));
 
 import type { Viewport } from 'next';
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
