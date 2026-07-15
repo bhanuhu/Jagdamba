@@ -119,20 +119,16 @@ class AmbientSynth {
 
   public playHammerHit() {
     try {
-      if (!this.nailAudio) {
-        this.nailAudio = new Audio('/nail.mp3?v=2');
-      }
-      this.nailAudio.currentTime = 0;
-      this.nailAudio.volume = 0.5;
-      
-      const playPromise = this.nailAudio.play();
+      const audio = new Audio(`/nail.mp3?v=${Date.now()}`);
+      audio.volume = 0.65;
+      const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise.catch(error => {
-          console.warn("Nail strike audio playback failed:", error);
+          console.error("Audio playback error:", error);
         });
       }
     } catch (err) {
-      console.warn("Nail strike audio setup failed:", err);
+      console.error("Audio initialization error:", err);
     }
   }
 
