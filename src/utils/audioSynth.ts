@@ -9,8 +9,7 @@ class AmbientSynth {
   private lfo: OscillatorNode | null = null;
   private chordInterval: any = null;
   private isRunning: boolean = false;
-  private nailArrayBuffer: ArrayBuffer | null = null;
-  private nailBuffer: AudioBuffer | null = null;
+  private nailAudio: HTMLAudioElement | null = null;
   
   // Luxury chord progression frequencies (hz)
   // 1. Amaj9: A1(55), E2(82.4), C#3(138.6), G#3(207.7), B3(246.9)
@@ -25,30 +24,14 @@ class AmbientSynth {
   ];
   private currentChordIndex = 0;
 
-  public async preloadNailSound() {
-    if (this.nailArrayBuffer) return;
+  public preloadNailSound() {
+    if (typeof window === 'undefined') return;
+    if (this.nailAudio) return;
     try {
-      const response = await fetch('/nail.mp3');
-      this.nailArrayBuffer = await response.arrayBuffer();
+      this.nailAudio = new Audio('/nail.mp3');
+      this.nailAudio.load();
     } catch (err) {
       console.warn('Preloading nail.mp3 failed:', err);
-    }
-  }
-
-  public async initializeAndDecode() {
-    if (this.nailBuffer) return;
-    if (!this.ctx) {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioContextClass) return;
-      this.ctx = new AudioContextClass();
-    }
-    if (this.nailArrayBuffer && !this.nailBuffer) {
-      try {
-        const bufferCopy = this.nailArrayBuffer.slice(0);
-        this.nailBuffer = await this.ctx.decodeAudioData(bufferCopy);
-      } catch (err) {
-        console.warn('Decoding nail.mp3 buffer failed on interaction:', err);
-      }
     }
   }
 
@@ -135,105 +118,22 @@ class AmbientSynth {
   }
 
   public playHammerHit() {
-    if (!this.ctx) {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioContextClass) return;
-      this.ctx = new AudioContextClass();
-    }
-    if (this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-    
-    // Ensure buffer is initialized/decoded on interaction click
-    this.initializeAndDecode();
-    
-    const now = this.ctx.currentTime;
-    
-    // Use realistic preloaded nail.mp3 if available
-    if (this.nailBuffer) {
-      const source = this.ctx.createBufferSource();
-      source.buffer = this.nailBuffer;
+    try {
+      if (!this.nailAudio) {
+        this.nailAudio = new Audio('/nail.mp3');
+      }
+      this.nailAudio.currentTime = 0;
+      this.nailAudio.volume = 0.5;
       
-      const gainNode = this.ctx.createGain();
-      gainNode.gain.setValueAtTime(0.5, now);
-      // Fade out cleanly at the end of the crop window (350ms) to avoid click artifacts
-      gainNode.gain.setValueAtTime(0.5, now + 0.28);
-      gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-      
-      source.connect(gainNode);
-      gainNode.connect(this.ctx.destination);
-      
-      // Play only the first 0.35 seconds (the first hit)
-      source.start(now, 0, 0.35);
-      return;
+      const playPromise = this.nailAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.warn("Nail strike audio playback failed:", error);
+        });
+      }
+    } catch (err) {
+      console.warn("Nail strike audio setup failed:", err);
     }
-    
-    // Fallback: Physical synthesized modeling
-    // 1. Initial Impact Transient (High-Pass Filtered White Noise)
-    const bufferSize = this.ctx.sampleRate * 0.02; // 20ms burst
-    const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-    const data = buffer.getChannelData(0);
-    for (let i = 0; i < bufferSize; i++) {
-      data[i] = Math.random() * 2 - 1;
-    }
-    const noise = this.ctx.createBufferSource();
-    noise.buffer = buffer;
-    
-    const noiseFilter = this.ctx.createBiquadFilter();
-    noiseFilter.type = 'highpass';
-    noiseFilter.frequency.setValueAtTime(3500, now);
-    
-    const noiseGain = this.ctx.createGain();
-    noiseGain.gain.setValueAtTime(0.08, now);
-    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.015);
-    
-    noise.connect(noiseFilter);
-    noiseFilter.connect(noiseGain);
-    noiseGain.connect(this.ctx.destination);
-    
-    // 2. Low Physical Thud (Weight of the hammer strike)
-    const thud = this.ctx.createOscillator();
-    const thudGain = this.ctx.createGain();
-    thud.type = 'triangle';
-    thud.frequency.setValueAtTime(160, now);
-    thud.frequency.exponentialRampToValueAtTime(60, now + 0.08);
-    
-    thudGain.gain.setValueAtTime(0.24, now);
-    thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
-    
-    thud.connect(thudGain);
-    thudGain.connect(this.ctx.destination);
-    
-    // 3. Metallic Overtones (Nail head resonant frequencies)
-    const ring1 = this.ctx.createOscillator();
-    const ring2 = this.ctx.createOscillator();
-    const ringGain = this.ctx.createGain();
-    
-    ring1.type = 'sine';
-    ring1.frequency.setValueAtTime(2800, now);
-    ring1.frequency.exponentialRampToValueAtTime(2600, now + 0.15);
-    
-    ring2.type = 'sine';
-    ring2.frequency.setValueAtTime(4100, now);
-    ring2.frequency.exponentialRampToValueAtTime(3900, now + 0.1);
-    
-    ringGain.gain.setValueAtTime(0.12, now);
-    ringGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
-    
-    ring1.connect(ringGain);
-    ring2.connect(ringGain);
-    ringGain.connect(this.ctx.destination);
-    
-    // Start all elements
-    noise.start(now);
-    thud.start(now);
-    ring1.start(now);
-    ring2.start(now);
-    
-    // Stop all oscillators
-    thud.stop(now + 0.12);
-    ring1.stop(now + 0.18);
-    ring2.stop(now + 0.12);
   }
 
   public stop() {

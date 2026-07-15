@@ -13,7 +13,7 @@ export default function CustomCursor() {
     // Preload nail.mp3 buffer
     try {
       ambientSynth.preloadNailSound();
-    } catch (e) {}
+    } catch (e) { }
 
     // Show custom cursor only when mouse moves inside window
     const handleMouseMove = (e: MouseEvent) => {
@@ -25,20 +25,15 @@ export default function CustomCursor() {
       if (target) {
         const isInteractive = target.closest('a, button, select, [role="button"], input, textarea, .cursor-pointer') !== null;
         setIsHovering(isInteractive);
-        if (isInteractive) {
-          try {
-            ambientSynth.initializeAndDecode();
-          } catch (err) {}
-        }
       }
     };
 
     const handleMouseDown = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const isInteractive = target && target.closest('a, button, select, [role="button"], input, textarea, .cursor-pointer') !== null;
-      
+
       setIsClicking(true);
-      
+
       // Play a short premium wood-tap/hammer click sound when hitting an interactive button
       if (isInteractive) {
         try {
@@ -91,7 +86,7 @@ export default function CustomCursor() {
     >
       {/* Container */}
       <div className="relative w-16 h-16">
-        
+
         {/* High-Graphic 3D Golden Nail */}
         <img loading="lazy" decoding="async"
           src="/nail_3d.png"
@@ -104,13 +99,13 @@ export default function CustomCursor() {
           className="absolute origin-[40px_40px] transition-all duration-75 ease-out z-20"
           style={{
             left: '20px',
-            top: '-26px',
+            top: '-6px',
             opacity: isHovering ? 1 : 0,
             transform: isClicking
               ? 'translate3d(2px, -2px, 0) rotate(-5deg)'  // swing down to strike nail head precisely at the top
               : isHovering
-              ? 'translate3d(0, 0, 0) rotate(15deg)'         // ready stance
-              : 'translate3d(20px, -20px, 0) rotate(45deg)', // hidden state
+                ? 'translate3d(0, 0, 0) rotate(15deg)'         // ready stance
+                : 'translate3d(20px, -20px, 0) rotate(45deg)', // hidden state
           }}
         >
           <img loading="lazy" decoding="async"
