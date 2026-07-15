@@ -86,12 +86,12 @@ export default function CustomCursor() {
         <img loading="lazy" decoding="async"
           src="/nail_3d.png"
           alt="3D Gold Nail Cursor"
-          className="absolute left-0 top-0 w-9 h-9 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]"
+          className="absolute left-0 top-0 w-9 h-9 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)] z-10"
         />
 
         {/* High-Graphic 3D Carpentry Hammer (Hovering above the nail head) */}
         <div
-          className="absolute origin-[40px_40px] transition-all duration-75 ease-out"
+          className="absolute origin-[40px_40px] transition-all duration-75 ease-out z-20"
           style={{
             left: '20px',
             top: '-26px',
