@@ -9,6 +9,7 @@ class AmbientSynth {
   private lfo: OscillatorNode | null = null;
   private chordInterval: any = null;
   private isRunning: boolean = false;
+  private nailArrayBuffer: ArrayBuffer | null = null;
   private nailBuffer: AudioBuffer | null = null;
   
   // Luxury chord progression frequencies (hz)
@@ -25,18 +26,29 @@ class AmbientSynth {
   private currentChordIndex = 0;
 
   public async preloadNailSound() {
+    if (this.nailArrayBuffer) return;
+    try {
+      const response = await fetch('/nail.mp3');
+      this.nailArrayBuffer = await response.arrayBuffer();
+    } catch (err) {
+      console.warn('Preloading nail.mp3 failed:', err);
+    }
+  }
+
+  public async initializeAndDecode() {
     if (this.nailBuffer) return;
     if (!this.ctx) {
       const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
       if (!AudioContextClass) return;
       this.ctx = new AudioContextClass();
     }
-    try {
-      const response = await fetch('/nail.mp3');
-      const arrayBuffer = await response.arrayBuffer();
-      this.nailBuffer = await this.ctx.decodeAudioData(arrayBuffer);
-    } catch (err) {
-      console.warn('Preloading nail.mp3 failed:', err);
+    if (this.nailArrayBuffer && !this.nailBuffer) {
+      try {
+        const bufferCopy = this.nailArrayBuffer.slice(0);
+        this.nailBuffer = await this.ctx.decodeAudioData(bufferCopy);
+      } catch (err) {
+        console.warn('Decoding nail.mp3 buffer failed on interaction:', err);
+      }
     }
   }
 
@@ -132,7 +144,8 @@ class AmbientSynth {
       this.ctx.resume();
     }
     
-    this.preloadNailSound();
+    // Ensure buffer is initialized/decoded on interaction click
+    this.initializeAndDecode();
     
     const now = this.ctx.currentTime;
     

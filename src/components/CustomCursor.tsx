@@ -25,6 +25,11 @@ export default function CustomCursor() {
       if (target) {
         const isInteractive = target.closest('a, button, select, [role="button"], input, textarea, .cursor-pointer') !== null;
         setIsHovering(isInteractive);
+        if (isInteractive) {
+          try {
+            ambientSynth.initializeAndDecode();
+          } catch (err) {}
+        }
       }
     };
 
