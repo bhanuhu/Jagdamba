@@ -8,20 +8,13 @@ const CustomCursor = dynamic(() => import('../src/components/CustomCursor'));
 const FloatingWhatsApp = dynamic(() => import('../src/components/FloatingWhatsApp'));
 
 import type { Viewport } from 'next';
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
-const cormorant = Cormorant_Garamond({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['100', '300', '400', '500', '700', '900'],
   style: ['normal', 'italic'],
-  variable: '--font-serif-display',
-  display: 'swap',
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-sans',
+  variable: '--font-roboto',
   display: 'swap',
 });
 
@@ -46,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${plusJakarta.variable} scroll-smooth`}>
+    <html lang="en" className={`${roboto.variable} scroll-smooth`}>
       <body className="relative min-h-screen bg-black text-white antialiased selection:bg-amber-300/30 selection:text-amber-100 flex flex-col justify-between">
         <CustomCursor />
         <Navbar />

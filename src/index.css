@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif-display: var(--font-serif-display), serif;
-  --font-sans: var(--font-sans), sans-serif;
+  --font-serif-display: var(--font-roboto), sans-serif;
+  --font-sans: var(--font-roboto), sans-serif;
   
   --color-gold-50: #fdfbf7;
   --color-gold-100: #faf4e8;
@@ -27,7 +27,7 @@ body {
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
 }
 
 /* Custom Scrollbar */
