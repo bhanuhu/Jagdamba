@@ -97,7 +97,7 @@ export default function CustomCursor() {
             top: '-26px',
             opacity: isHovering ? 1 : 0,
             transform: isClicking
-              ? 'translate3d(-6px, 8px, 0) rotate(-5deg)'  // swing down to strike nail head precisely
+              ? 'translate3d(2px, -2px, 0) rotate(-5deg)'  // swing down to strike nail head precisely at the top
               : isHovering
               ? 'translate3d(0, 0, 0) rotate(15deg)'         // ready stance
               : 'translate3d(20px, -20px, 0) rotate(45deg)', // hidden state
