@@ -75,7 +75,7 @@ export default function Configurator() {
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 shadow-2xl bg-neutral-900">
               
               {/* Preview Image */}
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/configurator-base-room.jpg"
                 alt="Room Customization Preview"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-1000"

@@ -60,7 +60,7 @@ export default function LivingRoom() {
 
         {/* Hotspots Showcase Board */}
         <div className="relative w-full rounded-2xl overflow-hidden aspect-[16/10] border border-white/5 shadow-2xl">
-          <img
+          <img loading="lazy" decoding="async"
             src="/images/livingroom-luxury-lounge.jpg"
             alt="Living Room"
             className="absolute inset-0 w-full h-full object-cover"

@@ -59,7 +59,7 @@ function TiltCard({ item }: { item: MaterialItem }) {
             className="relative w-3/4 aspect-square rounded-xl overflow-hidden shadow-2xl transition-shadow group-hover:shadow-[0_20px_50px_rgba(255,200,120,0.15)] border border-white/10"
             style={{ transform: 'translateZ(40px)' }}
           >
-            <img 
+            <img loading="lazy" decoding="async" 
               src={item.image} 
               alt={item.name} 
               className="w-full h-full object-cover"

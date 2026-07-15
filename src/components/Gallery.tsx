@@ -137,7 +137,7 @@ export default function Gallery() {
               className="group relative aspect-square rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 shadow-xl transition-all duration-300 hover:shadow-2xl"
             >
               {/* Photo Image */}
-              <img
+              <img loading="lazy" decoding="async"
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:filter brightness-90 group-hover:brightness-75"

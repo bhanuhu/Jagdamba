@@ -83,7 +83,7 @@ export default function Kitchen() {
           {/* Left Column: Interactive Image Panel */}
           <div className="lg:col-span-3 relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/5 shadow-2xl bg-neutral-900 group">
             {brands.map((b) => (
-              <img
+              <img loading="lazy" decoding="async"
                 key={b.id}
                 src={b.image}
                 alt={b.name}

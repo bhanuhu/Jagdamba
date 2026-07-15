@@ -37,7 +37,7 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="font-serif-display text-lg md:text-xl tracking-wider text-amber-100 flex items-center gap-3">
-            <img 
+            <img loading="lazy" decoding="async" 
               src="/favicon.png" 
               alt="Jagdamba Logo" 
               className="h-11 md:h-14 w-auto object-contain rounded border border-amber-200/10 shadow-lg shadow-amber-950/20 bg-neutral-950/40 p-0.5"

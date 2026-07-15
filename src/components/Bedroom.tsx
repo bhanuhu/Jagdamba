@@ -82,7 +82,7 @@ export default function Bedroom() {
             transition: 'transform 0.1s ease-out'
           }}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src="/images/master-bedroom-design.jpg"
             alt="Master Bedroom"
             className="w-full h-full object-cover"
@@ -128,7 +128,7 @@ export default function Bedroom() {
               }}
             >
               {/* Door Surface Image */}
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/doors-bedroom-inside.jpg"
                 alt="Jagdamba Door Veneer"
                 className="w-full h-full object-cover"

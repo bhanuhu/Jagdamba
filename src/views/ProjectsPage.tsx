@@ -106,7 +106,7 @@ export default function ProjectsPage() {
               >
                 {/* Image panel */}
                 <div className="aspect-[4/3] overflow-hidden relative bg-neutral-900">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={p.image} 
                     alt={p.title} 
                     className="w-full h-full object-cover lg:grayscale lg:opacity-70 group-hover:scale-105 lg:group-hover:grayscale-0 lg:group-hover:opacity-100 transition-all duration-700"

@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Logo & Showroom Hours Column */}
         <div className="col-span-2 space-y-6">
           <div className="font-serif-display text-2xl tracking-wider text-amber-100 flex items-center gap-2">
-            <img 
+            <img loading="lazy" decoding="async" 
               src="/favicon.png" 
               alt="Jagdamba Logo" 
               className="h-10 w-auto object-contain rounded border border-white/10 bg-neutral-950/20 p-0.5"

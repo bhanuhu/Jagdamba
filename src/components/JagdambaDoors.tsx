@@ -229,7 +229,7 @@ export default function JagdambaDoors() {
                     >
                       {/* Door Image */}
                       <div className="relative h-72 overflow-hidden">
-                        <img
+                        <img loading="lazy" decoding="async"
                           src={door.image}
                           alt={door.name}
                           className="w-full h-full object-cover transition-transform duration-700"
@@ -366,7 +366,7 @@ export default function JagdambaDoors() {
           {/* ─── CUSTOM DOOR CTA ─── */}
           <div className="relative rounded-3xl overflow-hidden border border-amber-400/15">
             <div className="absolute inset-0">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/jagdamba-door-walnut.jpg"
                 alt="Custom Door Background"
                 className="w-full h-full object-cover opacity-20"
@@ -402,12 +402,12 @@ export default function JagdambaDoors() {
 
               <div className="hidden md:flex flex-col gap-4">
                 <div className="relative rounded-2xl overflow-hidden h-48">
-                  <img src="/images/jagdamba-door-designer.jpg" alt="Custom Designer Door" className="w-full h-full object-cover" />
+                  <img loading="lazy" decoding="async" src="/images/jagdamba-door-designer.jpg" alt="Custom Designer Door" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white/80 text-sm font-medium">Bespoke Arc · Designer Series</div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden h-36">
-                  <img src="/images/jagdamba-door-teak.jpg" alt="Heritage Teak Door" className="w-full h-full object-cover" />
+                  <img loading="lazy" decoding="async" src="/images/jagdamba-door-teak.jpg" alt="Heritage Teak Door" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-3 left-4 text-white/80 text-sm font-medium">Heritage Teak · Luxury Series</div>
                 </div>
@@ -439,7 +439,7 @@ export default function JagdambaDoors() {
             <div className="grid md:grid-cols-2">
               {/* Left: Image */}
               <div className="relative h-80 md:h-full min-h-[300px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={selectedDoor.image}
                   alt={selectedDoor.name}
                   className="w-full h-full object-cover"

@@ -4,7 +4,7 @@ export default function Brands() {
       name: 'Century Ply', 
       type: 'Premium Plywood & Veneers',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/century-ply-logo.png" 
           alt="Century Ply" 
           className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -15,7 +15,7 @@ export default function Brands() {
       name: 'Action TESA', 
       type: 'HDMR & Particle Boards',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/action-tesa-logo.png" 
           alt="Action TESA" 
           className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -36,7 +36,7 @@ export default function Brands() {
       name: 'Saptam', 
       type: 'Luxury Flush Doors',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/saptam-logo.jpg" 
           alt="Saptam" 
           className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -47,7 +47,7 @@ export default function Brands() {
       name: 'Black Cobra', 
       type: 'Decorative Laminates',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/black-cobra-logo.jpg" 
           alt="Black Cobra" 
           className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -58,7 +58,7 @@ export default function Brands() {
       name: 'Virgo Laminates', 
       type: 'High-Gloss Sheets',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/virgo-logo.jpg" 
           alt="Virgo" 
           className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -69,7 +69,7 @@ export default function Brands() {
       name: 'Mazix', 
       type: 'Premium Cabinet Hinges',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/mazix-logo.jpg" 
           alt="Mazix" 
           className="h-9 w-9 rounded-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 filter sepia(1) saturate(5) hue-rotate(345deg) brightness(0.9) contrast(1.4) transform group-hover:scale-105" 
@@ -80,7 +80,7 @@ export default function Brands() {
       name: 'HEPO', 
       type: 'Silent Drawer Fittings',
       logo: (
-        <img 
+        <img loading="lazy" decoding="async" 
           src="/images/hepo-logo.png" 
           alt="HEPO" 
           className="h-8 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter brightness-0 invert transform group-hover:scale-105" 

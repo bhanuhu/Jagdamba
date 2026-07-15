@@ -83,7 +83,7 @@ export default function CustomCursor() {
       <div className="relative w-16 h-16">
         
         {/* High-Graphic 3D Golden Nail */}
-        <img
+        <img loading="lazy" decoding="async"
           src="/nail_3d.png"
           alt="3D Gold Nail Cursor"
           className="absolute left-0 top-0 w-9 h-9 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]"
@@ -103,7 +103,7 @@ export default function CustomCursor() {
               : 'translate3d(20px, -20px, 0) rotate(45deg)', // hidden state
           }}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src="/hammer_3d.png"
             alt="3D Hammer Strike"
             className="w-14 h-14 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.6)]"

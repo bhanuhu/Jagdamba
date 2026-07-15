@@ -122,7 +122,7 @@ export default function BrandsPage() {
                     </div>
                     {b.logo ? (
                       <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center p-2 border border-white/10 shrink-0">
-                        <img 
+                        <img loading="lazy" decoding="async" 
                           src={b.logo} 
                           alt={b.name} 
                           className={`max-w-full max-h-full object-contain ${
