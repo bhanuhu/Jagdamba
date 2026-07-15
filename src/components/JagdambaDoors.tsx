@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from 'react';
+import Image from 'next/image';
 
 // Door catalogue data
 const DOORS = [
@@ -229,10 +230,12 @@ export default function JagdambaDoors() {
                     >
                       {/* Door Image */}
                       <div className="relative h-72 overflow-hidden">
-                        <img loading="lazy" decoding="async"
+                        <Image
                           src={door.image}
                           alt={door.name}
-                          className="w-full h-full object-cover transition-transform duration-700"
+                          fill
+                          sizes="320px"
+                          className="object-cover transition-transform duration-700 pointer-events-none"
                           style={{ transform: isHovered ? 'scale(1.08)' : 'scale(1)' }}
                         />
 
@@ -366,10 +369,11 @@ export default function JagdambaDoors() {
           {/* ─── CUSTOM DOOR CTA ─── */}
           <div className="relative rounded-3xl overflow-hidden border border-amber-400/15">
             <div className="absolute inset-0">
-              <img loading="lazy" decoding="async"
+              <Image
                 src="/images/jagdamba-door-walnut.jpg"
                 alt="Custom Door Background"
-                className="w-full h-full object-cover opacity-20"
+                fill
+                className="object-cover opacity-20 pointer-events-none"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
             </div>
@@ -400,14 +404,26 @@ export default function JagdambaDoors() {
                 </a>
               </div>
 
-              <div className="hidden md:flex flex-col gap-4">
-                <div className="relative rounded-2xl overflow-hidden h-48">
-                  <img loading="lazy" decoding="async" src="/images/jagdamba-door-designer.jpg" alt="Custom Designer Door" className="w-full h-full object-cover" />
+              <div className="hidden md:flex flex-col gap-4 w-48 lg:w-64">
+                <div className="relative rounded-2xl overflow-hidden h-48 w-full">
+                  <Image
+                    src="/images/jagdamba-door-designer.jpg"
+                    alt="Custom Designer Door"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 256px"
+                    className="object-cover pointer-events-none"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white/80 text-sm font-medium">Bespoke Arc · Designer Series</div>
                 </div>
-                <div className="relative rounded-2xl overflow-hidden h-36">
-                  <img loading="lazy" decoding="async" src="/images/jagdamba-door-teak.jpg" alt="Heritage Teak Door" className="w-full h-full object-cover" />
+                <div className="relative rounded-2xl overflow-hidden h-36 w-full">
+                  <Image
+                    src="/images/jagdamba-door-teak.jpg"
+                    alt="Heritage Teak Door"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 256px"
+                    className="object-cover pointer-events-none"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-3 left-4 text-white/80 text-sm font-medium">Heritage Teak · Luxury Series</div>
                 </div>
@@ -439,10 +455,12 @@ export default function JagdambaDoors() {
             <div className="grid md:grid-cols-2">
               {/* Left: Image */}
               <div className="relative h-80 md:h-full min-h-[300px]">
-                <img loading="lazy" decoding="async"
+                <Image
                   src={selectedDoor.image}
                   alt={selectedDoor.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-cover pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-neutral-900/40" />
                 <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${PRICE_COLORS[selectedDoor.priceTag]}`}>
