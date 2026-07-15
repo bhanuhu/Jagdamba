@@ -1,9 +1,9 @@
 [
   {
     "route": "/",
-    "firstLoadUncompressedJsBytes": 628589,
+    "firstLoadUncompressedJsBytes": 628586,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/1l7t6dljqybvd.js",
       ".next/static/chunks/31p22iz24spu_.js",
@@ -16,9 +16,9 @@
   },
   {
     "route": "/blog",
-    "firstLoadUncompressedJsBytes": 547009,
+    "firstLoadUncompressedJsBytes": 547006,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/1-g6uxpcsk48h.js",
       ".next/static/chunks/19mil43gmb51g.js",
@@ -30,9 +30,9 @@
   },
   {
     "route": "/products",
-    "firstLoadUncompressedJsBytes": 541937,
+    "firstLoadUncompressedJsBytes": 541934,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/12braig1b5geb.js",
       ".next/static/chunks/19mil43gmb51g.js",
@@ -44,9 +44,9 @@
   },
   {
     "route": "/projects",
-    "firstLoadUncompressedJsBytes": 537134,
+    "firstLoadUncompressedJsBytes": 537131,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/2sk1e9mg9mfiq.js",
       ".next/static/chunks/19mil43gmb51g.js",
@@ -58,9 +58,9 @@
   },
   {
     "route": "/_not-found",
-    "firstLoadUncompressedJsBytes": 532148,
+    "firstLoadUncompressedJsBytes": 532145,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/19mil43gmb51g.js",
       ".next/static/chunks/177fc5qc0tqhu.js",
@@ -71,9 +71,9 @@
   },
   {
     "route": "/about",
-    "firstLoadUncompressedJsBytes": 532148,
+    "firstLoadUncompressedJsBytes": 532145,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/19mil43gmb51g.js",
       ".next/static/chunks/177fc5qc0tqhu.js",
@@ -84,9 +84,9 @@
   },
   {
     "route": "/brands",
-    "firstLoadUncompressedJsBytes": 532148,
+    "firstLoadUncompressedJsBytes": 532145,
     "firstLoadChunkPaths": [
-      ".next/static/chunks/3lp6eadcldsrz.js",
+      ".next/static/chunks/07n8r45itpp5u.js",
       ".next/static/chunks/2pocqzdfdbjcp.js",
       ".next/static/chunks/19mil43gmb51g.js",
       ".next/static/chunks/177fc5qc0tqhu.js",
