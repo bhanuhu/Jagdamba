@@ -116,37 +116,71 @@ class AmbientSynth {
     
     const now = this.ctx.currentTime;
     
-    // Low wood thump (wood block tone)
-    const osc1 = this.ctx.createOscillator();
-    const gain1 = this.ctx.createGain();
-    osc1.type = 'triangle';
-    osc1.frequency.setValueAtTime(180, now);
-    osc1.frequency.exponentialRampToValueAtTime(75, now + 0.1);
+    // 1. Initial Impact Transient (High-Pass Filtered White Noise)
+    const bufferSize = this.ctx.sampleRate * 0.02; // 20ms burst
+    const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
+    const noise = this.ctx.createBufferSource();
+    noise.buffer = buffer;
     
-    gain1.gain.setValueAtTime(0.2, now);
-    gain1.gain.linearRampToValueAtTime(0, now + 0.1);
+    const noiseFilter = this.ctx.createBiquadFilter();
+    noiseFilter.type = 'highpass';
+    noiseFilter.frequency.setValueAtTime(3500, now);
     
-    osc1.connect(gain1);
-    gain1.connect(this.ctx.destination);
+    const noiseGain = this.ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.08, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.015);
     
-    // High metal tap (nail stroke)
-    const osc2 = this.ctx.createOscillator();
-    const gain2 = this.ctx.createGain();
-    osc2.type = 'sine';
-    osc2.frequency.setValueAtTime(950, now);
-    osc2.frequency.exponentialRampToValueAtTime(300, now + 0.04);
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(this.ctx.destination);
     
-    gain2.gain.setValueAtTime(0.12, now);
-    gain2.gain.linearRampToValueAtTime(0, now + 0.05);
+    // 2. Low Physical Thud (Weight of the hammer strike)
+    const thud = this.ctx.createOscillator();
+    const thudGain = this.ctx.createGain();
+    thud.type = 'triangle';
+    thud.frequency.setValueAtTime(160, now);
+    thud.frequency.exponentialRampToValueAtTime(60, now + 0.08);
     
-    osc2.connect(gain2);
-    gain2.connect(this.ctx.destination);
+    thudGain.gain.setValueAtTime(0.24, now);
+    thudGain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
     
-    osc1.start(now);
-    osc2.start(now);
+    thud.connect(thudGain);
+    thudGain.connect(this.ctx.destination);
     
-    osc1.stop(now + 0.12);
-    osc2.stop(now + 0.06);
+    // 3. Metallic Overtones (Nail head resonant frequencies)
+    const ring1 = this.ctx.createOscillator();
+    const ring2 = this.ctx.createOscillator();
+    const ringGain = this.ctx.createGain();
+    
+    ring1.type = 'sine';
+    ring1.frequency.setValueAtTime(2800, now);
+    ring1.frequency.exponentialRampToValueAtTime(2600, now + 0.15);
+    
+    ring2.type = 'sine';
+    ring2.frequency.setValueAtTime(4100, now);
+    ring2.frequency.exponentialRampToValueAtTime(3900, now + 0.1);
+    
+    ringGain.gain.setValueAtTime(0.12, now);
+    ringGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+    
+    ring1.connect(ringGain);
+    ring2.connect(ringGain);
+    ringGain.connect(this.ctx.destination);
+    
+    // Start all elements
+    noise.start(now);
+    thud.start(now);
+    ring1.start(now);
+    ring2.start(now);
+    
+    // Stop all oscillators
+    thud.stop(now + 0.12);
+    ring1.stop(now + 0.18);
+    ring2.stop(now + 0.12);
   }
 
   public stop() {
