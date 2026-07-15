@@ -99,7 +99,7 @@ export default function CustomCursor() {
           className="absolute origin-[40px_40px] transition-all duration-75 ease-out z-20"
           style={{
             left: '35px',
-            top: '-6px',
+            top: '-0px',
             opacity: isHovering ? 1 : 0,
             transform: isClicking
               ? 'translate3d(2px, -2px, 0) rotate(-5deg)'  // swing down to strike nail head precisely at the top
