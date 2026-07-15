@@ -9,6 +9,7 @@ class AmbientSynth {
   private lfo: OscillatorNode | null = null;
   private chordInterval: any = null;
   private isRunning: boolean = false;
+  private nailBuffer: AudioBuffer | null = null;
   
   // Luxury chord progression frequencies (hz)
   // 1. Amaj9: A1(55), E2(82.4), C#3(138.6), G#3(207.7), B3(246.9)
@@ -23,6 +24,22 @@ class AmbientSynth {
   ];
   private currentChordIndex = 0;
 
+  public async preloadNailSound() {
+    if (this.nailBuffer) return;
+    if (!this.ctx) {
+      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContextClass) return;
+      this.ctx = new AudioContextClass();
+    }
+    try {
+      const response = await fetch('/nail.mp3');
+      const arrayBuffer = await response.arrayBuffer();
+      this.nailBuffer = await this.ctx.decodeAudioData(arrayBuffer);
+    } catch (err) {
+      console.warn('Preloading nail.mp3 failed:', err);
+    }
+  }
+
   public start() {
     if (this.isRunning) return;
     
@@ -31,6 +48,7 @@ class AmbientSynth {
     if (!AudioContextClass) return;
     
     this.ctx = new AudioContextClass();
+    this.preloadNailSound();
     
     // Master gain
     this.masterGain = this.ctx.createGain();
@@ -114,8 +132,30 @@ class AmbientSynth {
       this.ctx.resume();
     }
     
+    this.preloadNailSound();
+    
     const now = this.ctx.currentTime;
     
+    // Use realistic preloaded nail.mp3 if available
+    if (this.nailBuffer) {
+      const source = this.ctx.createBufferSource();
+      source.buffer = this.nailBuffer;
+      
+      const gainNode = this.ctx.createGain();
+      gainNode.gain.setValueAtTime(0.5, now);
+      // Fade out cleanly at the end of the crop window (350ms) to avoid click artifacts
+      gainNode.gain.setValueAtTime(0.5, now + 0.28);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      
+      source.connect(gainNode);
+      gainNode.connect(this.ctx.destination);
+      
+      // Play only the first 0.35 seconds (the first hit)
+      source.start(now, 0, 0.35);
+      return;
+    }
+    
+    // Fallback: Physical synthesized modeling
     // 1. Initial Impact Transient (High-Pass Filtered White Noise)
     const bufferSize = this.ctx.sampleRate * 0.02; // 20ms burst
     const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);

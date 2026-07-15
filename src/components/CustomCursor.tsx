@@ -10,6 +10,11 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Preload nail.mp3 buffer
+    try {
+      ambientSynth.preloadNailSound();
+    } catch (e) {}
+
     // Show custom cursor only when mouse moves inside window
     const handleMouseMove = (e: MouseEvent) => {
       setCoords({ x: e.clientX, y: e.clientY });
