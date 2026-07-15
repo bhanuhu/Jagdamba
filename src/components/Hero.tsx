@@ -2,12 +2,35 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { useScrollProgress } from '../hooks/useScrollProgress';
 import Image from 'next/image';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useScrollProgress(containerRef);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const element = containerRef.current;
+      const rect = element.getBoundingClientRect();
+      const elementHeight = element.offsetHeight;
+      const windowHeight = window.innerHeight;
+      
+      const scrolled = -rect.top;
+      const totalScrollRange = elementHeight - windowHeight;
+      const currentProgress = Math.max(0, Math.min(1, scrolled / totalScrollRange));
+      setScrollProgress(currentProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   // Mouse cursor glow position
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
@@ -32,16 +55,18 @@ export default function Hero() {
   }, []);
 
   // Interpolations based on scroll progress (0 to 1)
-  const blackOverlayOpacity = Math.max(0, 1 - scrollProgress * 3.5);
+  const blackOverlayOpacity = 0; // Disable initial black screen overlay to allow immediate image paint
   
   // Title (JAGDAMBA) opacity and scale
-  let titleOpacity = 0;
+  let titleOpacity = 1.0;
   let titleScale = 1.0;
   if (scrollProgress < 0.35) {
-    titleOpacity = Math.min(1, scrollProgress * 3.5);
+    titleOpacity = 1.0;
   } else if (scrollProgress < 0.6) {
     titleOpacity = Math.max(0, 1 - (scrollProgress - 0.35) * 4);
     titleScale = 1.0 + (scrollProgress - 0.35) * 0.4;
+  } else {
+    titleOpacity = 0;
   }
 
   // Backdrop 2 (Living space overview) opacity and scale
