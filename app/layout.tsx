@@ -26,6 +26,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'Jagdamba Timber Works & Plywood | Premium Sourcing in Rishikesh',
   description: 'Retail and wholesale supplier of premium plywood, HDMR boards, laminates, hardware, and custom Jagdamba Doors in Rishikesh, Uttarakhand.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export const viewport: Viewport = {

@@ -4,6 +4,7 @@
   "/about/page": "/about",
   "/blog/page": "/blog",
   "/brands/page": "/brands",
+  "/icon.png/route": "/icon.png",
   "/page": "/",
   "/products/page": "/products",
   "/projects/page": "/projects"

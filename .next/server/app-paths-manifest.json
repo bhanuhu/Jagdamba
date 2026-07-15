@@ -4,6 +4,7 @@
   "/about/page": "app/about/page.js",
   "/blog/page": "app/blog/page.js",
   "/brands/page": "app/brands/page.js",
+  "/icon.png/route": "app/icon.png/route.js",
   "/page": "app/page.js",
   "/products/page": "app/products/page.js",
   "/projects/page": "app/projects/page.js"
