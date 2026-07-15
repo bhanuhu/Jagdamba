@@ -98,7 +98,7 @@ export default function CustomCursor() {
         <div
           className="absolute origin-[40px_40px] transition-all duration-75 ease-out z-20"
           style={{
-            left: '25px',
+            left: '35px',
             top: '-6px',
             opacity: isHovering ? 1 : 0,
             transform: isClicking
